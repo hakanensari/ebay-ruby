@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductMetadataService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductSearchDataVersion&categoryId=123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-EBAY-SOA-SECURITY-APPNAME:
+      - APP_ID
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-EBAY-SOA-SERVICE-METRICS:
+      - '6211150'
+      X-EBAY-SOA-REQUEST-ID:
+      - 145ed517-6580-a471-d312-7542ffffe3bd!ProductMetadataService!10.71.29.49!v3apifindingsandboxcore[]
+      X-EBAY-SOA-SERVICE-VERSION:
+      - 1.6.0
+      X-EBAY-SOA-LOCALE-LIST:
+      - en-US_US
+      X-EBAY-SOA-MESSAGE-PROTOCOL:
+      - NONE
+      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
+      - XML
+      X-EBAY-SOA-GLOBAL-ID:
+      - EBAY-US
+      X-EBAY-SOA-OPERATION-NAME:
+      - getProductSearchDataVersion
+      X-EBAY-SOA-SERVICE-NAME:
+      - "{http://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductMetadataService"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - ''
+      Date:
+      - Sun, 11 May 2014 22:05:10 GMT
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><getProductSearchDataVersionResponse
+        xmlns="http://www.ebay.com/marketplace/marketplacecatalog/v1/services"><ack>Failure</ack><errorMessage><error><errorId>28</errorId><domain>Marketplace</domain><severity>Error</severity><category>System</category><message>Category
+        ID, 123, is invalid.</message><subdomain>MarketplaceCatalog</subdomain><parameter>123</parameter></error></errorMessage><version>1.6.0</version><timestamp>2014-05-11T22:05:10.104Z</timestamp></getProductSearchDataVersionResponse>
+    http_version: 
+  recorded_at: Sun, 11 May 2014 22:05:09 GMT
+- request:
+    method: get
+    uri: http://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductMetadataService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductSearchDataVersion&RESPONSE-DATA-FORMAT=JSON&categoryId=123
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-EBAY-SOA-SECURITY-APPNAME:
+      - APP_ID
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-EBAY-SOA-SERVICE-METRICS:
+      - '5185806'
+      X-EBAY-SOA-REQUEST-ID:
+      - 145ed526-7200-a471-d300-04c0ffffe557!ProductMetadataService!10.71.29.48!v3apifindingsandboxcore[]
+      X-EBAY-SOA-SERVICE-VERSION:
+      - 1.6.0
+      X-EBAY-SOA-LOCALE-LIST:
+      - en-US_US
+      X-EBAY-SOA-MESSAGE-PROTOCOL:
+      - NONE
+      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
+      - JSON
+      X-EBAY-SOA-GLOBAL-ID:
+      - EBAY-US
+      X-EBAY-SOA-OPERATION-NAME:
+      - getProductSearchDataVersion
+      X-EBAY-SOA-SERVICE-NAME:
+      - "{http://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductMetadataService"
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - ''
+      Date:
+      - Sun, 11 May 2014 22:06:11 GMT
+    body:
+      encoding: UTF-8
+      string: '{"getProductSearchDataVersionResponse":[{"ack":["Failure"],"errorMessage":[{"error":[{"errorId":["28"],"domain":["Marketplace"],"severity":["Error"],"category":["System"],"message":["Category
+        ID, 123, is invalid."],"subdomain":["MarketplaceCatalog"],"parameter":["123"]}]}],"version":["1.6.0"],"timestamp":["2014-05-11T22:06:11.760Z"]}]}'
+    http_version: 
+  recorded_at: Sun, 11 May 2014 22:06:11 GMT
+recorded_with: VCR 2.9.0

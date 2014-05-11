@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      EBAY-SOA-CONSUMER-ID:
+      - APP_ID
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-EBAY-SOA-SERVICE-METRICS:
+      - '7274306'
+      X-EBAY-SOA-REQUEST-ID:
+      - 145ed416-8030-a471-d5a1-2c31fff862f3!MerchandisingService!10.71.29.90!v3soa1sandboxcore[]
+      X-EBAY-SOA-SERVICE-VERSION:
+      - 1.5.0
+      X-EBAY-SOA-LOCALE-LIST:
+      - en-US_US
+      X-EBAY-SOA-MESSAGE-PROTOCOL:
+      - NONE
+      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
+      - JSON
+      X-EBAY-SOA-GLOBAL-ID:
+      - EBAY-US
+      X-EBAY-SOA-OPERATION-NAME:
+      - getMostWatchedItems
+      X-EBAY-SOA-SERVICE-NAME:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - ''
+      Date:
+      - Sun, 11 May 2014 21:47:37 GMT
+    body:
+      encoding: UTF-8
+      string: '{"getMostWatchedItemsResponse":{"ack":"Success","version":"1.5.0","timestamp":"2014-05-11T21:47:37.875Z"}}'
+    http_version: 
+  recorded_at: Sun, 11 May 2014 21:47:37 GMT
+- request:
+    method: get
+    uri: http://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      EBAY-SOA-CONSUMER-ID:
+      - APP_ID
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      X-EBAY-SOA-SERVICE-METRICS:
+      - '7175452'
+      X-EBAY-SOA-REQUEST-ID:
+      - 145ed416-b280-a471-d5b7-9097fff8873c!MerchandisingService!10.71.29.91!v3soa1sandboxcore[]
+      X-EBAY-SOA-SERVICE-VERSION:
+      - 1.5.0
+      X-EBAY-SOA-LOCALE-LIST:
+      - en-US_US
+      X-EBAY-SOA-MESSAGE-PROTOCOL:
+      - NONE
+      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
+      - XML
+      X-EBAY-SOA-GLOBAL-ID:
+      - EBAY-US
+      X-EBAY-SOA-OPERATION-NAME:
+      - getMostWatchedItems
+      X-EBAY-SOA-SERVICE-NAME:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - ''
+      Date:
+      - Sun, 11 May 2014 21:47:37 GMT
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><getMostWatchedItemsResponse xmlns="http://www.ebay.com/marketplace/services"><ack>Success</ack><version>1.5.0</version><timestamp>2014-05-11T21:47:38.664Z</timestamp></getMostWatchedItemsResponse>
+    http_version: 
+  recorded_at: Sun, 11 May 2014 21:47:37 GMT
+recorded_with: VCR 2.9.0
