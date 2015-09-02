@@ -12,10 +12,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'multi_xml', '~> 0.5.5'
   s.add_dependency 'excon', '~>0.33'
 
-  s.add_development_dependency 'pry', '~> 0.9.12'
   s.add_development_dependency 'rake', '~> 10.3'
   s.add_development_dependency 'minitest', '~> 5.3'
-  s.add_development_dependency 'minitest-emoji', '~> 2.0'
   s.add_development_dependency 'vcr', '~> 2.9'
 
   s.files         = `git ls-files`.split("\n")

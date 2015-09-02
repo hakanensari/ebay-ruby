@@ -1,6 +1,4 @@
 require 'minitest/autorun'
-require 'minitest/emoji'
-require 'pry'
 require 'vcr'
 
 VCR.configure do |c|
