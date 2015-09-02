@@ -1,10 +1,14 @@
 module Ebay
   module Config
     class << self
-      attr_writer :app_id
+      %i(app_id dev_id cert_id).each do |method|
+        eval <<-DEF
+          attr_writer :#{method}
 
-      def app_id
-        @app_id || ENV['EBAY_APP_ID']
+          def #{method}
+            @#{method} || ENV['EBAY_#{method.upcase}']
+          end
+        DEF
       end
     end
   end
