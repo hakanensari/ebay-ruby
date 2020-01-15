@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/hakanensari/ebay-ruby'
   s.summary     = 'A Ruby wrapper to the eBay Web Services API'
 
-  s.add_dependency 'multi_xml', '~> 0.5.5'
   s.add_dependency 'excon', '~>0.33'
+  s.add_dependency 'multi_xml', '>= 0.5.5'
 
   s.add_development_dependency 'rake', '~> 10.3'
   s.add_development_dependency 'minitest', '~> 5.3'
