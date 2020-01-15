@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/services/search/FindingService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=findItemsByKeywords&keywords=ernesto+laclau
+    uri: https://svcs.sandbox.ebay.com/services/search/FindingService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=findItemsByKeywords&keywords=ernesto+laclau
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -33,7 +33,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - findItemsByKeywords
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/search/v1/services}FindingService"
+      - "{https://www.ebay.com/marketplace/search/v1/services}FindingService"
       Content-Type:
       - text/xml;charset=UTF-8
       Transfer-Encoding:
@@ -42,33 +42,33 @@ http_interactions:
       - Sun, 11 May 2014 21:39:40 GMT
     body:
       encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><findItemsByKeywordsResponse xmlns="http://www.ebay.com/marketplace/search/v1/services"><ack>Success</ack><version>1.12.0</version><timestamp>2014-05-11T21:39:40.213Z</timestamp><searchResult
+      string: <?xml version='1.0' encoding='UTF-8'?><findItemsByKeywordsResponse xmlns="https://www.ebay.com/marketplace/search/v1/services"><ack>Success</ack><version>1.12.0</version><timestamp>2014-05-11T21:39:40.213Z</timestamp><searchResult
         count="3"><item><itemId>110108016161</itemId><title>Emancipation(s) By Laclau,
         Ernesto</title><globalId>EBAY-US</globalId><subtitle>Always Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Emancipation-s-Laclau-Ernesto-/110108016161</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Emancipation-s-Laclau-Ernesto-/110108016161</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">16.39</currentPrice><convertedCurrentPrice currencyId="USD">16.39</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H37M11S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:11:51.000Z</startTime><endTime>2014-06-05T19:16:51.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
         currencyId="USD">20.48</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item><item><itemId>110108016439</itemId><title>On
         Populist Reason By Laclau, Ernesto</title><globalId>EBAY-US</globalId><subtitle>Always
         Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Populist-Reason-Laclau-Ernesto-/110108016439</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Populist-Reason-Laclau-Ernesto-/110108016439</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">21.52</currentPrice><convertedCurrentPrice currencyId="USD">21.52</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H37M24S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:12:04.000Z</startTime><endTime>2014-06-05T19:17:04.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
         currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item><item><itemId>110108023405</itemId><title>Hegemony
         and Socialist Strategy By Laclau, Ernesto/ Mouffe, Chantal</title><globalId>EBAY-US</globalId><subtitle>Always
         Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Hegemony-and-Socialist-Strategy-Laclau-Ernesto-Mouffe-Chantal-/110108023405</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Hegemony-and-Socialist-Strategy-Laclau-Ernesto-Mouffe-Chantal-/110108023405</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">21.52</currentPrice><convertedCurrentPrice currencyId="USD">21.52</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H43M34S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:18:14.000Z</startTime><endTime>2014-06-05T19:23:14.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
-        currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item></searchResult><paginationOutput><pageNumber>1</pageNumber><entriesPerPage>100</entriesPerPage><totalPages>1</totalPages><totalEntries>3</totalEntries></paginationOutput><itemSearchURL>http://shop.sandbox.ebay.com/i.html?_nkw=ernesto+laclau&amp;_ddo=1&amp;_ipg=100&amp;_pgn=1</itemSearchURL></findItemsByKeywordsResponse>
-    http_version: 
+        currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item></searchResult><paginationOutput><pageNumber>1</pageNumber><entriesPerPage>100</entriesPerPage><totalPages>1</totalPages><totalEntries>3</totalEntries></paginationOutput><itemSearchURL>https://shop.sandbox.ebay.com/i.html?_nkw=ernesto+laclau&amp;_ddo=1&amp;_ipg=100&amp;_pgn=1</itemSearchURL></findItemsByKeywordsResponse>
+    http_version:
   recorded_at: Sun, 11 May 2014 21:39:39 GMT
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/services/search/FindingService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=findItemsByKeywords&RESPONSEENCODING=JSON&keywords=ernesto+laclau
+    uri: https://svcs.sandbox.ebay.com/services/search/FindingService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=findItemsByKeywords&RESPONSEENCODING=JSON&keywords=ernesto+laclau
     body:
       encoding: US-ASCII
       string: ''
@@ -78,7 +78,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -99,7 +99,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - findItemsByKeywords
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/search/v1/services}FindingService"
+      - "{https://www.ebay.com/marketplace/search/v1/services}FindingService"
       Content-Type:
       - text/xml;charset=UTF-8
       Transfer-Encoding:
@@ -108,28 +108,28 @@ http_interactions:
       - Sun, 11 May 2014 21:39:41 GMT
     body:
       encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><findItemsByKeywordsResponse xmlns="http://www.ebay.com/marketplace/search/v1/services"><ack>Success</ack><version>1.12.0</version><timestamp>2014-05-11T21:39:41.233Z</timestamp><searchResult
+      string: <?xml version='1.0' encoding='UTF-8'?><findItemsByKeywordsResponse xmlns="https://www.ebay.com/marketplace/search/v1/services"><ack>Success</ack><version>1.12.0</version><timestamp>2014-05-11T21:39:41.233Z</timestamp><searchResult
         count="3"><item><itemId>110108016161</itemId><title>Emancipation(s) By Laclau,
         Ernesto</title><globalId>EBAY-US</globalId><subtitle>Always Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Emancipation-s-Laclau-Ernesto-/110108016161</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Emancipation-s-Laclau-Ernesto-/110108016161</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">16.39</currentPrice><convertedCurrentPrice currencyId="USD">16.39</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H37M10S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:11:51.000Z</startTime><endTime>2014-06-05T19:16:51.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
         currencyId="USD">20.48</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item><item><itemId>110108016439</itemId><title>On
         Populist Reason By Laclau, Ernesto</title><globalId>EBAY-US</globalId><subtitle>Always
         Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Populist-Reason-Laclau-Ernesto-/110108016439</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Populist-Reason-Laclau-Ernesto-/110108016439</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">21.52</currentPrice><convertedCurrentPrice currencyId="USD">21.52</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H37M23S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:12:04.000Z</startTime><endTime>2014-06-05T19:17:04.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
         currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item><item><itemId>110108023405</itemId><title>Hegemony
         and Socialist Strategy By Laclau, Ernesto/ Mouffe, Chantal</title><globalId>EBAY-US</globalId><subtitle>Always
         Save with UnbeatableSale!</subtitle><primaryCategory><categoryId>2228</categoryId><categoryName>Textbooks,
-        Education</categoryName></primaryCategory><viewItemURL>http://cgi.sandbox.ebay.com/Hegemony-and-Socialist-Strategy-Laclau-Ernesto-Mouffe-Chantal-/110108023405</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
+        Education</categoryName></primaryCategory><viewItemURL>https://cgi.sandbox.ebay.com/Hegemony-and-Socialist-Strategy-Laclau-Ernesto-Mouffe-Chantal-/110108023405</viewItemURL><paymentMethod>PayPal</paymentMethod><autoPay>false</autoPay><postalCode>08701</postalCode><location>Lakewood,NJ,USA</location><country>US</country><shippingInfo><shippingServiceCost
         currencyId="USD">0.0</shippingServiceCost><shippingType>Free</shippingType><shipToLocations>US</shipToLocations><expeditedShipping>false</expeditedShipping><oneDayShippingAvailable>false</oneDayShippingAvailable><handlingTime>4</handlingTime></shippingInfo><sellingStatus><currentPrice
         currencyId="USD">21.52</currentPrice><convertedCurrentPrice currencyId="USD">21.52</convertedCurrentPrice><sellingState>Active</sellingState><timeLeft>P24DT21H43M33S</timeLeft></sellingStatus><listingInfo><bestOfferEnabled>false</bestOfferEnabled><buyItNowAvailable>false</buyItNowAvailable><startTime>2012-10-13T19:18:14.000Z</startTime><endTime>2014-06-05T19:23:14.000Z</endTime><listingType>FixedPrice</listingType><gift>false</gift></listingInfo><returnsAccepted>true</returnsAccepted><condition><conditionId>1000</conditionId><conditionDisplayName>Brand
         New</conditionDisplayName></condition><isMultiVariationListing>false</isMultiVariationListing><discountPriceInfo><originalRetailPrice
-        currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item></searchResult><paginationOutput><pageNumber>1</pageNumber><entriesPerPage>100</entriesPerPage><totalPages>1</totalPages><totalEntries>3</totalEntries></paginationOutput><itemSearchURL>http://shop.sandbox.ebay.com/i.html?_nkw=ernesto+laclau&amp;_ddo=1&amp;_ipg=100&amp;_pgn=1</itemSearchURL></findItemsByKeywordsResponse>
-    http_version: 
+        currencyId="USD">27.15</originalRetailPrice><pricingTreatment>STP</pricingTreatment><soldOnEbay>false</soldOnEbay><soldOffEbay>false</soldOffEbay></discountPriceInfo><topRatedListing>false</topRatedListing></item></searchResult><paginationOutput><pageNumber>1</pageNumber><entriesPerPage>100</entriesPerPage><totalPages>1</totalPages><totalEntries>3</totalEntries></paginationOutput><itemSearchURL>https://shop.sandbox.ebay.com/i.html?_nkw=ernesto+laclau&amp;_ddo=1&amp;_ipg=100&amp;_pgn=1</itemSearchURL></findItemsByKeywordsResponse>
+    http_version:
   recorded_at: Sun, 11 May 2014 21:39:40 GMT
 recorded_with: VCR 2.9.0

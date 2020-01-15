@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductDetails&productDetailsRequest.dataset=DisplayableSearchResults&productDetailsRequest.productIdentifier.ePID=83414
+    uri: https://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductDetails&productDetailsRequest.dataset=DisplayableSearchResults&productDetailsRequest.productIdentifier.ePID=83414
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -33,7 +33,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - getProductDetails
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductService"
+      - "{https://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductService"
       Content-Type:
       - text/xml;charset=UTF-8
       Transfer-Encoding:
@@ -42,16 +42,16 @@ http_interactions:
       - Sun, 11 May 2014 21:55:48 GMT
     body:
       encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><getProductDetailsResponse xmlns="http://www.ebay.com/marketplace/marketplacecatalog/v1/services"><ack>Success</ack><version>1.3.1</version><timestamp>2014-05-11T21:55:48.635Z</timestamp><product><productIdentifier><ePID>83414</ePID></productIdentifier><stockPhotoURL><thumbnail><value>http://i.ebayimg.com/00/$T2eC16F,!y8E9s2fjE4sBRY5q7ep6Q~~_0.JPG?set_id=89040003C1</value></thumbnail><standard><value>http://i.ebayimg.com/00/$T2eC16F,!y8E9s2fjE4sBRY5q7ep6Q~~_7.JPG?set_id=89040003C1</value></standard></stockPhotoURL><productDetails><propertyName>PRODUCT_FAMILY_ID</propertyName><value><number><value>1504161</value></number></value></productDetails><productDetails><propertyName>ISBN</propertyName><value><text><value>0231056699</value></text></value></productDetails><productDetails><propertyName>Publication
+      string: <?xml version='1.0' encoding='UTF-8'?><getProductDetailsResponse xmlns="https://www.ebay.com/marketplace/marketplacecatalog/v1/services"><ack>Success</ack><version>1.3.1</version><timestamp>2014-05-11T21:55:48.635Z</timestamp><product><productIdentifier><ePID>83414</ePID></productIdentifier><stockPhotoURL><thumbnail><value>https://i.ebayimg.com/00/$T2eC16F,!y8E9s2fjE4sBRY5q7ep6Q~~_0.JPG?set_id=89040003C1</value></thumbnail><standard><value>https://i.ebayimg.com/00/$T2eC16F,!y8E9s2fjE4sBRY5q7ep6Q~~_7.JPG?set_id=89040003C1</value></standard></stockPhotoURL><productDetails><propertyName>PRODUCT_FAMILY_ID</propertyName><value><number><value>1504161</value></number></value></productDetails><productDetails><propertyName>ISBN</propertyName><value><text><value>0231056699</value></text></value></productDetails><productDetails><propertyName>Publication
         Year</propertyName><value><text><value>19850000</value></text></value></productDetails><productDetails><propertyName>EAN</propertyName><value><text><value>9780231056694</value></text></value></productDetails><productDetails><propertyName>Author</propertyName><value><text><value>Gilles
         Deleuze</value></text></value></productDetails><productDetails><propertyName>CP_NAME</propertyName><value><text><value>Nietzsche
         and Philosophy by Gilles Deleuze (1985, Paperback)</value></text></value></productDetails><productDetails><propertyName>Format_Computed</propertyName><value><text><value>Trade
         Paper</value></text></value></productDetails><productStatus><excludeForeBaySelling>false</excludeForeBaySelling><excludeForeBayReviews>false</excludeForeBayReviews><excludeForHalfSelling>false</excludeForHalfSelling></productStatus><type>Member</type></product></getProductDetailsResponse>
-    http_version: 
+    http_version:
   recorded_at: Sun, 11 May 2014 21:55:48 GMT
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductDetails&RESPONSE-DATA-FORMAT=JSON&productDetailsRequest.dataset=DisplayableSearchResults&productDetailsRequest.productIdentifier.ePID=83414
+    uri: https://svcs.sandbox.ebay.com/services/marketplacecatalog/ProductService/v1?GLOBAL-ID=EBAY-US&OPERATION-NAME=getProductDetails&RESPONSE-DATA-FORMAT=JSON&productDetailsRequest.dataset=DisplayableSearchResults&productDetailsRequest.productIdentifier.ePID=83414
     body:
       encoding: US-ASCII
       string: ''
@@ -61,7 +61,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -82,7 +82,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - getProductDetails
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductService"
+      - "{https://www.ebay.com/marketplace/marketplacecatalog/v1/services}ProductService"
       Content-Type:
       - text/plain;charset=UTF-8
       Transfer-Encoding:
@@ -96,6 +96,6 @@ http_interactions:
         Deleuze"]}]}]},{"propertyName":["CP_NAME"],"value":[{"text":[{"value":["Nietzsche
         and Philosophy by Gilles Deleuze (1985, Paperback)"]}]}]},{"propertyName":["Format_Computed"],"value":[{"text":[{"value":["Trade
         Paper"]}]}]}],"productStatus":[{"excludeForeBaySelling":["false"],"excludeForeBayReviews":["false"],"excludeForHalfSelling":["false"]}],"type":["Member"]}]}]}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 11 May 2014 22:04:08 GMT
 recorded_with: VCR 2.9.0

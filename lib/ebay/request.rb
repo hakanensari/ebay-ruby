@@ -29,7 +29,7 @@ module Ebay
     private
 
     def connection
-      Excon.new("http://#{host}#{path}", headers: headers)
+      Excon.new("https://#{host}#{path}", headers: headers)
     end
   end
 end

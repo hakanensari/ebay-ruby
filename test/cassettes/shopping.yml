@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://open.api.sandbox.ebay.com/shopping?CALLNAME=FindHalfProducts&QueryKeywords=ernesto+laclau
+    uri: https://open.api.sandbox.ebay.com/shopping?CALLNAME=FindHalfProducts&QueryKeywords=ernesto+laclau
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Content-Type:
       - text/xml;charset=utf-8
@@ -51,8 +51,8 @@ http_interactions:
         \  <MoreResults>true</MoreResults>\n   <TotalProducts>42</TotalProducts>\n
         \  <Products>\n    <Product>\n     <Title>Hegemony and Socialist Strategy
         : Towards a Radical Democratic Politics by Ernesto Laclau and Chantal Mouffe
-        (1985, Paperback)</Title>\n     <DetailsURL>http://syicatalogs.sandbox.ebay.com/ws/eBayISAPI.dll?PageSyiProductDetails&amp;IncludeAttributes=1&amp;ShowAttributesTable=1&amp;ProductMementoString=116501:2:1055:1801344777:636461977:f037f5013398147917ef7356f3f28683:1:1:1:411300</DetailsURL>\n
-        \    <StockPhotoURL>http://i.ebayimg.com/00/$T2eC16dHJG8E9nyfpmrQBRVzID0nGw~~_6.JPG?set_id=89040003C1</StockPhotoURL>\n
+        (1985, Paperback)</Title>\n     <DetailsURL>https://syicatalogs.sandbox.ebay.com/ws/eBayISAPI.dll?PageSyiProductDetails&amp;IncludeAttributes=1&amp;ShowAttributesTable=1&amp;ProductMementoString=116501:2:1055:1801344777:636461977:f037f5013398147917ef7356f3f28683:1:1:1:411300</DetailsURL>\n
+        \    <StockPhotoURL>https://i.ebayimg.com/00/$T2eC16dHJG8E9nyfpmrQBRVzID0nGw~~_6.JPG?set_id=89040003C1</StockPhotoURL>\n
         \    <DisplayStockPhotos>true</DisplayStockPhotos>\n     <ItemCount>0</ItemCount>\n
         \    <ProductID type=\"Reference\">308707</ProductID>\n     <ProductID type=\"ISBN\">086091769X</ProductID>\n
         \    <ProductID type=\"ISBN\">9780860917694</ProductID>\n     <DomainName>Textbooks,
@@ -65,13 +65,13 @@ http_interactions:
         \     </NameValueList>\n      <NameValueList>\n       <Name>Language</Name>\n
         \      <Value>English</Value>\n      </NameValueList>\n     </ItemSpecifics>\n
         \    <ReviewCount>0</ReviewCount>\n     <MinPrice currencyID=\"USD\">5.08</MinPrice>\n
-        \   </Product>\n   </Products>\n   <ProductSearchURL>http://search.half.sandbox.ebay.com/ernesto-laclau</ProductSearchURL>\n
+        \   </Product>\n   </Products>\n   <ProductSearchURL>https://search.half.sandbox.ebay.com/ernesto-laclau</ProductSearchURL>\n
         \ </FindHalfProductsResponse>\n "
-    http_version: 
+    http_version:
   recorded_at: Sun, 11 May 2014 21:37:29 GMT
 - request:
     method: get
-    uri: http://open.api.sandbox.ebay.com/shopping?CALLNAME=FindHalfProducts&QueryKeywords=ernesto+laclau&RESPONSEENCODING=JSON
+    uri: https://open.api.sandbox.ebay.com/shopping?CALLNAME=FindHalfProducts&QueryKeywords=ernesto+laclau&RESPONSEENCODING=JSON
     body:
       encoding: US-ASCII
       string: ''
@@ -83,7 +83,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Content-Type:
       - text/plain;charset=utf-8
@@ -115,11 +115,11 @@ http_interactions:
       encoding: UTF-8
       string: '{"Timestamp":"2014-05-11T21:37:30.721Z","Ack":"Success","Build":"E867_CORE_APILW2_16754878_R1","Version":"867","PageNumber":1,"ApproximatePages":42,"MoreResults":true,"TotalProducts":42,"Products":{"Product":[{"Title":"Hegemony
         and Socialist Strategy : Towards a Radical Democratic Politics by Ernesto
-        Laclau and Chantal Mouffe (1985, Paperback)","DetailsURL":"http://syicatalogs.sandbox.ebay.com/ws/eBayISAPI.dll?PageSyiProductDetails&IncludeAttributes=1&ShowAttributesTable=1&ProductMementoString=116501:2:1055:1801344777:636461977:f037f5013398147917ef7356f3f28683:1:1:1:411300","StockPhotoURL":"http://i.ebayimg.com/00/$T2eC16dHJG8E9nyfpmrQBRVzID0nGw~~_6.JPG?set_id=89040003C1","DisplayStockPhotos":true,"ItemCount":0,"ProductID":[{"Value":"308707","Type":"Reference"},{"Value":"086091769X","Type":"ISBN"},{"Value":"9780860917694","Type":"ISBN"}],"DomainName":"Textbooks,
+        Laclau and Chantal Mouffe (1985, Paperback)","DetailsURL":"https://syicatalogs.sandbox.ebay.com/ws/eBayISAPI.dll?PageSyiProductDetails&IncludeAttributes=1&ShowAttributesTable=1&ProductMementoString=116501:2:1055:1801344777:636461977:f037f5013398147917ef7356f3f28683:1:1:1:411300","StockPhotoURL":"https://i.ebayimg.com/00/$T2eC16dHJG8E9nyfpmrQBRVzID0nGw~~_6.JPG?set_id=89040003C1","DisplayStockPhotos":true,"ItemCount":0,"ProductID":[{"Value":"308707","Type":"Reference"},{"Value":"086091769X","Type":"ISBN"},{"Value":"9780860917694","Type":"ISBN"}],"DomainName":"Textbooks,
         Education","ItemSpecifics":{"NameValueList":[{"Name":"Publisher","Value":["Verso
         Books"]},{"Name":"Author","Value":["Chantal Mouffe","Ernesto Laclau"]},{"Name":"Title","Value":["Hegemony
         and Socialist Strategy : Towards a Radical Democratic Politics by Ernesto
-        Laclau and Chantal Mouffe (1985, Paperback)"]},{"Name":"Language","Value":["English"]}]},"ReviewCount":0,"MinPrice":{"Value":5.08,"CurrencyID":"USD"}}]},"ProductSearchURL":"http://search.half.sandbox.ebay.com/ernesto-laclau"}'
-    http_version: 
+        Laclau and Chantal Mouffe (1985, Paperback)"]},{"Name":"Language","Value":["English"]}]},"ReviewCount":0,"MinPrice":{"Value":5.08,"CurrencyID":"USD"}}]},"ProductSearchURL":"https://search.half.sandbox.ebay.com/ernesto-laclau"}'
+    http_version:
   recorded_at: Sun, 11 May 2014 21:37:29 GMT
 recorded_with: VCR 2.9.0

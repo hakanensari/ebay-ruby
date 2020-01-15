@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -33,7 +33,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - getMostWatchedItems
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      - "{https://www.ebay.com/marketplace/services}MerchandisingService"
       Content-Type:
       - application/json;charset=UTF-8
       Transfer-Encoding:
@@ -43,11 +43,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"getMostWatchedItemsResponse":{"ack":"Success","version":"1.5.0","timestamp":"2014-05-11T21:47:37.875Z"}}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 11 May 2014 21:47:37 GMT
 - request:
     method: get
-    uri: http://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems
     body:
       encoding: US-ASCII
       string: ''
@@ -57,7 +57,7 @@ http_interactions:
   response:
     status:
       code: 200
-      message: 
+      message:
     headers:
       Server:
       - Apache-Coyote/1.1
@@ -78,7 +78,7 @@ http_interactions:
       X-EBAY-SOA-OPERATION-NAME:
       - getMostWatchedItems
       X-EBAY-SOA-SERVICE-NAME:
-      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      - "{https://www.ebay.com/marketplace/services}MerchandisingService"
       Content-Type:
       - text/xml;charset=UTF-8
       Transfer-Encoding:
@@ -87,7 +87,7 @@ http_interactions:
       - Sun, 11 May 2014 21:47:37 GMT
     body:
       encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><getMostWatchedItemsResponse xmlns="http://www.ebay.com/marketplace/services"><ack>Success</ack><version>1.5.0</version><timestamp>2014-05-11T21:47:38.664Z</timestamp></getMostWatchedItemsResponse>
-    http_version: 
+      string: <?xml version='1.0' encoding='UTF-8'?><getMostWatchedItemsResponse xmlns="https://www.ebay.com/marketplace/services"><ack>Success</ack><version>1.5.0</version><timestamp>2014-05-11T21:47:38.664Z</timestamp></getMostWatchedItemsResponse>
+    http_version:
   recorded_at: Sun, 11 May 2014 21:47:37 GMT
 recorded_with: VCR 2.9.0
