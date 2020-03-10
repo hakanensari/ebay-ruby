@@ -1,23 +1,24 @@
-require 'ebay/version'
 # frozen_string_literal: true
 
-Gem::Specification.new do |s|
-  s.name        = 'ebay-ruby'
-  s.version     = Ebay::VERSION
-  s.authors     = ['Hakan Ensari']
-  s.email       = ['me@hakanensari.com']
-  s.homepage    = 'https://github.com/hakanensari/ebay-ruby'
-  s.summary     = 'A Ruby wrapper to the eBay Web Services API'
 $LOAD_PATH.push File.expand_path('lib', __dir__)
+require 'ebay/version'
 
-  s.add_dependency 'excon', '~>0.33'
-  s.add_dependency 'multi_xml', '>= 0.5.5'
+Gem::Specification.new do |gem|
+  gem.name     = 'ebay-ruby'
+  gem.version  = Ebay::VERSION
+  gem.authors  = ['Hakan Ensari']
+  gem.email    = ['me@hakanensari.com']
+  gem.homepage = 'https://github.com/hakanensari/ebay-ruby'
+  gem.summary  = 'Ruby wrapper to the eBay Web Services API'
+  gem.license  = 'MIT'
 
-  s.add_development_dependency 'rake', '~> 10.3'
-  s.add_development_dependency 'minitest', '~> 5.3'
-  s.add_development_dependency 'vcr', '~> 2.9'
+  gem.files = Dir.glob('lib/**/*') + %w[LICENSE README.md]
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_paths = ['lib']
+  gem.add_dependency 'excon', '>= 0.50.0'
+  gem.add_dependency 'multi_xml', '>= 0.5.5'
+  gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rubocop'
+  gem.add_development_dependency 'vcr'
+  gem.required_ruby_version = '>= 2.4'
 end
