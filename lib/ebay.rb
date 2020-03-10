@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ebay/config'
 require 'ebay/finding'
 require 'ebay/merchandising'
