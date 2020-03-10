@@ -7,9 +7,9 @@ require 'ebay/parser'
 module Ebay
   class Request
     %i(host path headers).each do |method|
-      eval <<-DEF
         def self.#{method}(value = nil)
           value ? @#{method} = value : @#{method}
+      eval <<-DEF, binding, __FILE__, __LINE__ + 1
         end
 
         def #{method}
