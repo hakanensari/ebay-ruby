@@ -20,6 +20,7 @@ module Ebay
 
     def sandbox!
       return if host.include?('sandbox')
+
       host.sub!('ebay', 'sandbox.ebay')
     end
 
