@@ -2,92 +2,439 @@
 http_interactions:
 - request:
     method: get
-    uri: https://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON&RESPONSE-PAYLOAD&categoryId=267
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      EBAY-SOA-CONSUMER-ID:
+      Ebay-Soa-Consumer-Id:
       - APP_ID
+      X-Ebay-Soa-Response-Data-Format:
+      - JSON
+      Connection:
+      - close
+      Host:
+      - svcs.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
   response:
     status:
       code: 200
-      message:
+      message: OK
     headers:
-      Server:
-      - Apache-Coyote/1.1
-      X-EBAY-SOA-SERVICE-METRICS:
-      - '7274306'
-      X-EBAY-SOA-REQUEST-ID:
-      - 145ed416-8030-a471-d5a1-2c31fff862f3!MerchandisingService!10.71.29.90!v3soa1sandboxcore[]
-      X-EBAY-SOA-SERVICE-VERSION:
-      - 1.5.0
-      X-EBAY-SOA-LOCALE-LIST:
-      - en-US_US
-      X-EBAY-SOA-MESSAGE-PROTOCOL:
-      - NONE
-      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
-      - JSON
-      X-EBAY-SOA-GLOBAL-ID:
-      - EBAY-US
-      X-EBAY-SOA-OPERATION-NAME:
-      - getMostWatchedItems
-      X-EBAY-SOA-SERVICE-NAME:
-      - "{https://www.ebay.com/marketplace/services}MerchandisingService"
       Content-Type:
-      - application/json;charset=UTF-8
-      Transfer-Encoding:
+      - application/json;charset=utf-8
+      Guid:
+      - 170d51ca-4510-a0f1-70d2-18628b341cde
+      Rlogid:
+      - t6q%60eh9%3Fuk%60wcdl%2856%3A7275%2Busqdrrp%2Buk%60%2Bceb%7C%28dlh-170d51ca45a-0x19f
+      Server:
+      - ebay-proxy-server
+      Set-Cookie:
+      - dp1=bu1p/QEBfX0BAX19AQA**622e34fd^;Domain=.ebay.com;Expires=Sun, 13-Mar-2022
+        18:16:29 GMT;Path=/
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Content-Type-Options:
+      - nosniff
+      X-Ebay-C-Request-Id:
+      - ri=9HFhVFKR289B,rci=ec214a4d37b1ed10
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Client-Tls-Version:
+      - 771, 10.68.114.61
+      X-Ebay-Request-Id:
+      - 170d51ca-4510-a0f1-70d2-18628b341cde!MerchandisingService!10.15.23.13!esbnewexsoaesb[!promo!slcreco-3192406.stratus.slc.ebay.com!r1reco[]
+      X-Ebay-Soa-Global-Id:
       - ''
+      X-Ebay-Soa-Locale-List:
+      - en-US_US
+      X-Ebay-Soa-Message-Protocol:
+      - NONE
+      X-Ebay-Soa-Operation-Name:
+      - getMostWatchedItems
+      X-Ebay-Soa-Service-Metrics:
+      - '2452497700'
+      X-Ebay-Soa-Service-Name:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      X-Ebay-Soa-Service-Version:
+      - '1.5'
+      X-Ebay-Svc-Tracking-Data:
+      - "<a>ul=en-US&nqc=AA**&bs=0&nqt=AA**&!_epec=7,6&uc=1</a>"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
       Date:
-      - Sun, 11 May 2014 21:47:37 GMT
+      - Fri, 13 Mar 2020 18:16:29 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '886'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-svcs
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: '{"getMostWatchedItemsResponse":{"ack":"Success","version":"1.5.0","timestamp":"2014-05-11T21:47:37.875Z"}}'
-    http_version:
-  recorded_at: Sun, 11 May 2014 21:47:37 GMT
+      string: '{"getMostWatchedItemsResponse":{"ack":"Success","version":"1.0.0","timestamp":"2020-03-13T18:03:885.029Z","itemRecommendations":{"item":[{"itemId":"180978823313","title":"Childrens
+        Books Leveled Readers Level A B C D PreK Kindergarten 1st Grade Lot 60","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Childrens-Books-Leveled-Readers-Level-A-B-C-D-PreK-Kindergarten-1st-Grade-Lot-60/180978823313?_trkparms=mehot%3Dpp%26itm%3D180978823313%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P7DT17H27M35S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/6HIAAOSwotFbLSCr/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"3121"},{"itemId":"352443609471","title":"The
+        Lost Book of Herbal Remedies (paperback with color pictures)","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Lost-Book-of-Herbal-Remedies-paperback-with-color-pictures/352443609471?_trkparms=mehot%3Dpp%26itm%3D352443609471%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P13DT19H50M28S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/ebIAAOSwcrJeU3q3/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"37.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"2597"},{"itemId":"290825989160","title":"Pocket
+        Size United States Declaration Of Independence & Constitution Of The USA","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Pocket-Size-United-States-Declaration-Of-Independence-Constitution-Of-The-USA/290825989160?_trkparms=mehot%3Dpp%26itm%3D290825989160%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P22DT4H20M51S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/A6IAAOxyBvZTSMje/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"8.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"2018"},{"itemId":"301862122682","title":"LOT
+        60 First Little Easy Readers SET Kindergarten Grade 1 Homeschool Level ABCD
+        ","subtitle":"","viewItemURL":"https://www.ebay.com/itm/LOT-60-First-Little-Easy-Readers-SET-Kindergarten-Grade-1-Homeschool-Level-ABCD/301862122682?_trkparms=mehot%3Dpp%26itm%3D301862122682%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P18DT7H5M5S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/8P0AAOxywbNRARi1/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"20.99"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1903"},{"itemId":"182423216043","title":"Pete
+        the Cat Childrens Kids Books Phonics I Can Read Box Gift Set Lot 12","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Pete-the-Cat-Childrens-Kids-Books-Phonics-I-Can-Read-Box-Gift-Set-Lot-12/182423216043?_trkparms=mehot%3Dpp%26itm%3D182423216043%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P2DT7H14M7S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/p2EAAOSwnHZYfAIk/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"13.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1680"},{"itemId":"180354424594","title":"Childrens
+        Kids Books Lot 60 Early Beginning Readers Kindergarten First Grade","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Childrens-Kids-Books-Lot-60-Early-Beginning-Readers-Kindergarten-First-Grade/180354424594?_trkparms=mehot%3Dpp%26itm%3D180354424594%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P24DT5H28M5S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/0GUAAOSwiFtbmuhL/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1254"},{"itemId":"181524996861","title":"Berenstain
+        Bears Phonics Kids Childrens Books Learn to Read I Can Read Lot 12","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Berenstain-Bears-Phonics-Kids-Childrens-Books-Learn-to-Read-I-Can-Read-Lot-12/181524996861?_trkparms=mehot%3Dpp%26itm%3D181524996861%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P30DT5H11M57S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/9ZAAAOxyUylTSYWS/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"12.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1160"},{"itemId":"261450283745","title":"The
+        Holy Bible King James Version Gustave Dore Illustrated Leather Bound  SALE","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Holy-Bible-King-James-Version-Gustave-Dore-Illustrated-Leather-Bound-SALE/261450283745?_trkparms=mehot%3Dpp%26itm%3D261450283745%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P29DT2H17M54S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/77cAAOSwaNJbUN-h/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"34.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1113"},{"itemId":"151148634226","title":"Lot
+        16 Childrens Kids Books Early Readers Beginning Scholastic Learn to Read","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Lot-16-Childrens-Kids-Books-Early-Readers-Beginning-Scholastic-Learn-to-Read/151148634226?_trkparms=mehot%3Dpp%26itm%3D151148634226%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P10DT13H43M38S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/iRQAAOxyk99R0vgI/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"12.89"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1046"},{"itemId":"390985280985","title":"THE
+        HOLY BIBLE: KJV illustrated by Gustave Dore Sealed Leather Bound BRAND NEW!","subtitle":"","viewItemURL":"https://www.ebay.com/itm/THE-HOLY-BIBLE-KJV-illustrated-by-Gustave-Dore-Sealed-Leather-Bound-BRAND-NEW/390985280985?_trkparms=mehot%3Dpp%26itm%3D390985280985%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P11DT9H40M12S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/sJEAAOSw5VFWGdPR/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"34.88"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1009"},{"itemId":"352414312177","title":"The
+        Lost Ways (HardCover special edition)","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Lost-Ways-HardCover-special-edition/352414312177?_trkparms=mehot%3Dpp%26itm%3D352414312177%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P11DT19H39M23S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/XjkAAOSwFb5bWE9I/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"47.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1004"},{"itemId":"301725941338","title":"NEW
+        60 Easy Leveled Books Lot Homeschool Preschool Kindergarten First Grade 1","subtitle":"","viewItemURL":"https://www.ebay.com/itm/NEW-60-Easy-Leveled-Books-Lot-Homeschool-Preschool-Kindergarten-First-Grade-1/301725941338?_trkparms=mehot%3Dpp%26itm%3D301725941338%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P15DT9H10M2S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/aJ0AAOxyDgRQ934m/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"935"},{"itemId":"302385988268","title":"Necronomicon
+        by H.P. Lovecraft Commemorative New Deluxe Leather Bound Hardback","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Necronomicon-by-H-P-Lovecraft-Commemorative-New-Deluxe-Leather-Bound-Hardback/302385988268?_trkparms=mehot%3Dpp%26itm%3D302385988268%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P3DT12H11M59S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/JgoAAOSwZVJaw8kL/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"59.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"909"},{"itemId":"261537277493","title":"The
+        Holy Bible King James Version Old & New Testaments, Black / GET FREE BIBLES","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Holy-Bible-King-James-Version-Old-New-Testaments-Black-GET-FREE-BIBLES/261537277493?_trkparms=mehot%3Dpp%26itm%3D261537277493%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P5DT19H57M14S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/RyQAAOSwW8ZdG5O5/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"6.49"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"901"},{"itemId":"153429394651","title":"Magnet
+        Motor Free Energy Generator build yourself Permanent | NEW 2020 English","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Magnet-Motor-Free-Energy-Generator-build-yourself-Permanent-NEW-2020-English/153429394651?_trkparms=mehot%3Dpp%26itm%3D153429394651%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P12DT19H44M43S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/Dm4AAOSwGFZclwXr/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"27.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"894"},{"itemId":"300817400694","title":"25
+        SIGHT WORD READERS PreK Kindergarten Homeschool Books Guided Reading Level
+        A","subtitle":"","viewItemURL":"https://www.ebay.com/itm/25-SIGHT-WORD-READERS-PreK-Kindergarten-Homeschool-Books-Guided-Reading-Level-A/300817400694?_trkparms=mehot%3Dpp%26itm%3D300817400694%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P2DT1H11M53S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/F8IAAOxy~iJQ96nA/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"17.99"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"868"},{"itemId":"200742376981","title":"24
+        Module Electronics Course + 4,500 circuit schematics on CD","subtitle":"","viewItemURL":"https://www.ebay.com/itm/24-Module-Electronics-Course-4-500-circuit-schematics-on-CD/200742376981?_trkparms=mehot%3Dpp%26itm%3D200742376981%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P26DT21H55M17S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/oCcAAMXQWx1RGk6W/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"6.00"},"shippingCost":{"@currencyId":"USD","__value__":"1.25"},"watchCount":"799"},{"itemId":"183735530329","title":"Lot
+        of 10 Vintage Old Rare Antique Hardcover Books - Mixed Color - Random","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Lot-of-10-Vintage-Old-Rare-Antique-Hardcover-Books-Mixed-Color-Random/183735530329?_trkparms=mehot%3Dpp%26itm%3D183735530329%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P4DT2H2M58S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/8FgAAOSwuFZcjqh1/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"26.95"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"767"},{"itemId":"180332640877","title":"Little
+        Leveled Readers Learn to Read Children''s Books Lot 60","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Little-Leveled-Readers-Learn-to-Read-Childrens-Books-Lot-60/180332640877?_trkparms=mehot%3Dpp%26itm%3D180332640877%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P14DT8H9M36S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/ghkAAOxyxU1Q5ina/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"753"},{"itemId":"111482778001","title":"The
+        Complete Harry Potter 7 Books Collection Boxed Gift Set NEW J. K. Rowling","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Complete-Harry-Potter-7-Books-Collection-Boxed-Gift-Set-NEW-J-K-Rowling/111482778001?_trkparms=mehot%3Dpp%26itm%3D111482778001%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-GB","timeLeft":"P27DT15H50M43S","primaryCategoryId":"267","primaryCategoryName":"Books,
+        Comics & Magazines","country":"GB","imageURL":"https://i.ebayimg.com/images/g/-SoAAOSw1x1UN6ow/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"61.44"},"shippingCost":{"@currencyId":"USD","__value__":"25.07"},"watchCount":"751"}]}}}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 18:16:29 GMT
 - request:
     method: get
-    uri: https://svcs.sandbox.ebay.com/MerchandisingService?GLOBAL-ID=EBAY-US&OPERATION-NAME=getMostWatchedItems
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?CONSUMER-ID=APP_ID&GLOBAL-ID&OPERATION-NAME=getMostWatchedItems&RESPONSE-DATA-FORMAT=JSON&RESPONSE-PAYLOAD&categoryId=267
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      EBAY-SOA-CONSUMER-ID:
-      - APP_ID
+      Connection:
+      - close
+      Host:
+      - svcs.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
   response:
     status:
       code: 200
-      message:
+      message: OK
     headers:
-      Server:
-      - Apache-Coyote/1.1
-      X-EBAY-SOA-SERVICE-METRICS:
-      - '7175452'
-      X-EBAY-SOA-REQUEST-ID:
-      - 145ed416-b280-a471-d5b7-9097fff8873c!MerchandisingService!10.71.29.91!v3soa1sandboxcore[]
-      X-EBAY-SOA-SERVICE-VERSION:
-      - 1.5.0
-      X-EBAY-SOA-LOCALE-LIST:
-      - en-US_US
-      X-EBAY-SOA-MESSAGE-PROTOCOL:
-      - NONE
-      X-EBAY-SOA-RESPONSE-DATA-FORMAT:
-      - XML
-      X-EBAY-SOA-GLOBAL-ID:
-      - EBAY-US
-      X-EBAY-SOA-OPERATION-NAME:
-      - getMostWatchedItems
-      X-EBAY-SOA-SERVICE-NAME:
-      - "{https://www.ebay.com/marketplace/services}MerchandisingService"
       Content-Type:
-      - text/xml;charset=UTF-8
-      Transfer-Encoding:
+      - application/json;charset=utf-8
+      Guid:
+      - 170d520b-97d0-a9e0-86c1-d381f2fc1eb4
+      Rlogid:
+      - t6q%60eh9%3Ftilwcdl%28%3E1wmn*w%60ut3550-170d520b985-0x1a6
+      Server:
+      - ebay-proxy-server
+      Set-Cookie:
+      - dp1=bu1p/QEBfX0BAX19AQA**622e3609^;Domain=.ebay.com;Expires=Sun, 13-Mar-2022
+        18:20:57 GMT;Path=/
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Content-Type-Options:
+      - nosniff
+      X-Ebay-C-Request-Id:
+      - ri=ev5vGZSrlKVp,rci=157b6ec39b223c9d
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Client-Tls-Version:
+      - 771, 10.73.131.208
+      X-Ebay-Request-Id:
+      - 170d520b-97d0-a9e0-86c1-d381f2fc1eb4!MerchandisingService!10.158.8.108!esbnewexsoaesb[!promo!rnoreco-86thh-tess0037.stratus.rno.ebay.com!r1reco[]
+      X-Ebay-Soa-Global-Id:
       - ''
+      X-Ebay-Soa-Locale-List:
+      - en-US_US
+      X-Ebay-Soa-Message-Protocol:
+      - NONE
+      X-Ebay-Soa-Operation-Name:
+      - getMostWatchedItems
+      X-Ebay-Soa-Service-Metrics:
+      - '2452497700'
+      X-Ebay-Soa-Service-Name:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      X-Ebay-Soa-Service-Version:
+      - '1.5'
+      X-Ebay-Svc-Tracking-Data:
+      - "<a>ul=en-US&nqc=AA**&bs=0&nqt=AA**&!_epec=7,6&uc=1</a>"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
       Date:
-      - Sun, 11 May 2014 21:47:37 GMT
+      - Fri, 13 Mar 2020 18:20:57 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '840'
+      X-Ebay-Pop-Id:
+      - UFES2-SLCAZ01-svcs
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: <?xml version='1.0' encoding='UTF-8'?><getMostWatchedItemsResponse xmlns="https://www.ebay.com/marketplace/services"><ack>Success</ack><version>1.5.0</version><timestamp>2014-05-11T21:47:38.664Z</timestamp></getMostWatchedItemsResponse>
-    http_version:
-  recorded_at: Sun, 11 May 2014 21:47:37 GMT
-recorded_with: VCR 2.9.0
+      string: '{"getMostWatchedItemsResponse":{"ack":"Success","version":"1.0.0","timestamp":"2020-03-13T18:03:396.057Z","itemRecommendations":{"item":[{"itemId":"180978823313","title":"Childrens
+        Books Leveled Readers Level A B C D PreK Kindergarten 1st Grade Lot 60","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Childrens-Books-Leveled-Readers-Level-A-B-C-D-PreK-Kindergarten-1st-Grade-Lot-60/180978823313?_trkparms=mehot%3Dpp%26itm%3D180978823313%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P7DT17H23M7S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/6HIAAOSwotFbLSCr/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"3121"},{"itemId":"352443609471","title":"The
+        Lost Book of Herbal Remedies (paperback with color pictures)","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Lost-Book-of-Herbal-Remedies-paperback-with-color-pictures/352443609471?_trkparms=mehot%3Dpp%26itm%3D352443609471%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P13DT19H46M0S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/ebIAAOSwcrJeU3q3/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"37.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"2597"},{"itemId":"290825989160","title":"Pocket
+        Size United States Declaration Of Independence & Constitution Of The USA","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Pocket-Size-United-States-Declaration-Of-Independence-Constitution-Of-The-USA/290825989160?_trkparms=mehot%3Dpp%26itm%3D290825989160%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P22DT4H16M23S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/A6IAAOxyBvZTSMje/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"8.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"2018"},{"itemId":"301862122682","title":"LOT
+        60 First Little Easy Readers SET Kindergarten Grade 1 Homeschool Level ABCD
+        ","subtitle":"","viewItemURL":"https://www.ebay.com/itm/LOT-60-First-Little-Easy-Readers-SET-Kindergarten-Grade-1-Homeschool-Level-ABCD/301862122682?_trkparms=mehot%3Dpp%26itm%3D301862122682%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P18DT7H0M37S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/8P0AAOxywbNRARi1/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"20.99"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1903"},{"itemId":"182423216043","title":"Pete
+        the Cat Childrens Kids Books Phonics I Can Read Box Gift Set Lot 12","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Pete-the-Cat-Childrens-Kids-Books-Phonics-I-Can-Read-Box-Gift-Set-Lot-12/182423216043?_trkparms=mehot%3Dpp%26itm%3D182423216043%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P2DT7H9M39S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/p2EAAOSwnHZYfAIk/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"13.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1680"},{"itemId":"180354424594","title":"Childrens
+        Kids Books Lot 60 Early Beginning Readers Kindergarten First Grade","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Childrens-Kids-Books-Lot-60-Early-Beginning-Readers-Kindergarten-First-Grade/180354424594?_trkparms=mehot%3Dpp%26itm%3D180354424594%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P24DT5H23M37S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/0GUAAOSwiFtbmuhL/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1254"},{"itemId":"181524996861","title":"Berenstain
+        Bears Phonics Kids Childrens Books Learn to Read I Can Read Lot 12","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Berenstain-Bears-Phonics-Kids-Childrens-Books-Learn-to-Read-I-Can-Read-Lot-12/181524996861?_trkparms=mehot%3Dpp%26itm%3D181524996861%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P30DT5H7M29S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/9ZAAAOxyUylTSYWS/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"12.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1160"},{"itemId":"261450283745","title":"The
+        Holy Bible King James Version Gustave Dore Illustrated Leather Bound  SALE","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Holy-Bible-King-James-Version-Gustave-Dore-Illustrated-Leather-Bound-SALE/261450283745?_trkparms=mehot%3Dpp%26itm%3D261450283745%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P29DT2H13M26S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/77cAAOSwaNJbUN-h/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"34.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1113"},{"itemId":"151148634226","title":"Lot
+        16 Childrens Kids Books Early Readers Beginning Scholastic Learn to Read","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Lot-16-Childrens-Kids-Books-Early-Readers-Beginning-Scholastic-Learn-to-Read/151148634226?_trkparms=mehot%3Dpp%26itm%3D151148634226%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P10DT13H39M10S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/iRQAAOxyk99R0vgI/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"12.89"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1046"},{"itemId":"390985280985","title":"THE
+        HOLY BIBLE: KJV illustrated by Gustave Dore Sealed Leather Bound BRAND NEW!","subtitle":"","viewItemURL":"https://www.ebay.com/itm/THE-HOLY-BIBLE-KJV-illustrated-by-Gustave-Dore-Sealed-Leather-Bound-BRAND-NEW/390985280985?_trkparms=mehot%3Dpp%26itm%3D390985280985%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P11DT9H35M44S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/sJEAAOSw5VFWGdPR/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"34.88"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"1009"},{"itemId":"352414312177","title":"The
+        Lost Ways (HardCover special edition)","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Lost-Ways-HardCover-special-edition/352414312177?_trkparms=mehot%3Dpp%26itm%3D352414312177%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P11DT19H34M55S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/XjkAAOSwFb5bWE9I/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"47.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"1004"},{"itemId":"301725941338","title":"NEW
+        60 Easy Leveled Books Lot Homeschool Preschool Kindergarten First Grade 1","subtitle":"","viewItemURL":"https://www.ebay.com/itm/NEW-60-Easy-Leveled-Books-Lot-Homeschool-Preschool-Kindergarten-First-Grade-1/301725941338?_trkparms=mehot%3Dpp%26itm%3D301725941338%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P15DT9H5M34S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/aJ0AAOxyDgRQ934m/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"935"},{"itemId":"302385988268","title":"Necronomicon
+        by H.P. Lovecraft Commemorative New Deluxe Leather Bound Hardback","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Necronomicon-by-H-P-Lovecraft-Commemorative-New-Deluxe-Leather-Bound-Hardback/302385988268?_trkparms=mehot%3Dpp%26itm%3D302385988268%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P3DT12H7M31S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/JgoAAOSwZVJaw8kL/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"59.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"909"},{"itemId":"261537277493","title":"The
+        Holy Bible King James Version Old & New Testaments, Black / GET FREE BIBLES","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Holy-Bible-King-James-Version-Old-New-Testaments-Black-GET-FREE-BIBLES/261537277493?_trkparms=mehot%3Dpp%26itm%3D261537277493%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P5DT19H52M46S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/RyQAAOSwW8ZdG5O5/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"6.49"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"901"},{"itemId":"153429394651","title":"Magnet
+        Motor Free Energy Generator build yourself Permanent | NEW 2020 English","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Magnet-Motor-Free-Energy-Generator-build-yourself-Permanent-NEW-2020-English/153429394651?_trkparms=mehot%3Dpp%26itm%3D153429394651%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P12DT19H40M15S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/Dm4AAOSwGFZclwXr/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"27.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"894"},{"itemId":"300817400694","title":"25
+        SIGHT WORD READERS PreK Kindergarten Homeschool Books Guided Reading Level
+        A","subtitle":"","viewItemURL":"https://www.ebay.com/itm/25-SIGHT-WORD-READERS-PreK-Kindergarten-Homeschool-Books-Guided-Reading-Level-A/300817400694?_trkparms=mehot%3Dpp%26itm%3D300817400694%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P2DT1H7M25S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/F8IAAOxy~iJQ96nA/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"17.99"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"868"},{"itemId":"200742376981","title":"24
+        Module Electronics Course + 4,500 circuit schematics on CD","subtitle":"","viewItemURL":"https://www.ebay.com/itm/24-Module-Electronics-Course-4-500-circuit-schematics-on-CD/200742376981?_trkparms=mehot%3Dpp%26itm%3D200742376981%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P26DT21H50M49S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/oCcAAMXQWx1RGk6W/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"6.00"},"shippingCost":{"@currencyId":"USD","__value__":"1.25"},"watchCount":"799"},{"itemId":"183735530329","title":"Lot
+        of 10 Vintage Old Rare Antique Hardcover Books - Mixed Color - Random","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Lot-of-10-Vintage-Old-Rare-Antique-Hardcover-Books-Mixed-Color-Random/183735530329?_trkparms=mehot%3Dpp%26itm%3D183735530329%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P4DT1H58M30S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/8FgAAOSwuFZcjqh1/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"26.95"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"},"watchCount":"767"},{"itemId":"180332640877","title":"Little
+        Leveled Readers Learn to Read Children''s Books Lot 60","subtitle":"","viewItemURL":"https://www.ebay.com/itm/Little-Leveled-Readers-Learn-to-Read-Childrens-Books-Lot-60/180332640877?_trkparms=mehot%3Dpp%26itm%3D180332640877%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P14DT8H5M8S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"https://i.ebayimg.com/images/g/ghkAAOxyxU1Q5ina/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"25.89"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"},"watchCount":"753"},{"itemId":"111482778001","title":"The
+        Complete Harry Potter 7 Books Collection Boxed Gift Set NEW J. K. Rowling","subtitle":"","viewItemURL":"https://www.ebay.com/itm/The-Complete-Harry-Potter-7-Books-Collection-Boxed-Gift-Set-NEW-J-K-Rowling/111482778001?_trkparms=mehot%3Dpp%26itm%3D111482778001%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-GB","timeLeft":"P27DT15H46M15S","primaryCategoryId":"267","primaryCategoryName":"Books,
+        Comics & Magazines","country":"GB","imageURL":"https://i.ebayimg.com/images/g/-SoAAOSw1x1UN6ow/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"61.44"},"shippingCost":{"@currencyId":"USD","__value__":"25.07"},"watchCount":"751"}]}}}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 18:20:57 GMT
+- request:
+    method: get
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?CONSUMER-ID=APP_ID&GLOBAL-ID&OPERATION-NAME=getRelatedCategoryItems&RESPONSE-DATA-FORMAT=JSON&RESPONSE-PAYLOAD&categoryId=267
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - svcs.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Guid:
+      - 170d520f-7c00-aa48-9f20-e690eee92b76
+      Rlogid:
+      - t6q%60eh9%3Fuk%60wcdl%2852616%3E1%2Busqdrrp%2Buk%60%2Bceb%7C%28dlh-170d520f7cf-0x19a
+      Server:
+      - ebay server
+      Set-Cookie:
+      - dp1=bu1p/QEBfX0BAX19AQA**622e3618^;Domain=.ebay.com;Expires=Sun, 13-Mar-2022
+        18:21:12 GMT;Path=/
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Content-Type-Options:
+      - nosniff
+      X-Ebay-C-Request-Id:
+      - ri=SmLAJ4CPvljU,rci=77425718ff9c694f
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Client-Tls-Version:
+      - 771, 88.98.232.251
+      X-Ebay-Request-Id:
+      - 170d520f-7c00-aa48-9f20-e690eee92b76![
+      X-Ebay-Soa-Global-Id:
+      - ''
+      X-Ebay-Soa-Locale-List:
+      - en-US_US
+      X-Ebay-Soa-Message-Protocol:
+      - NONE
+      X-Ebay-Soa-Operation-Name:
+      - getRelatedCategoryItems
+      X-Ebay-Soa-Service-Metrics:
+      - '2452497700'
+      X-Ebay-Soa-Service-Name:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      X-Ebay-Soa-Service-Version:
+      - '1.5'
+      X-Ebay-Svc-Tracking-Data:
+      - "<a>ul=en-US&nqc=AA**&bs=0&nqt=AA**&!_epec=7,6&uc=1</a>"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 13 Mar 2020 18:21:12 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"getRelatedCategoryItemsResponse":{"ack":"Success","version":"1.0.0","timestamp":"2020-03-13T18:03:530.012Z","itemRecommendations":{"item":[]}}}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 18:21:12 GMT
+- request:
+    method: get
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?CONSUMER-ID=APP_ID&GLOBAL-ID&OPERATION-NAME=getSimilarItems&RESPONSE-DATA-FORMAT=JSON&RESPONSE-PAYLOAD&itemId=333112555211
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - svcs.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Guid:
+      - 170d5216-0d20-a48a-fbf4-6a54ad733ae9
+      Rlogid:
+      - t6q%60eh9%3Ftilwcdl%28roa%7Dt*w%60ut3542-170d52160d4-0x191
+      Server:
+      - ebay server
+      Set-Cookie:
+      - dp1=bu1p/QEBfX0BAX19AQA**622e3633^;Domain=.ebay.com;Expires=Sun, 13-Mar-2022
+        18:21:39 GMT;Path=/
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Content-Type-Options:
+      - nosniff
+      X-Ebay-C-Request-Id:
+      - ri=EMGZaq0Q0CkW,rci=02083cd1acc4d811
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Client-Tls-Version:
+      - 771, 88.98.232.251
+      X-Ebay-Request-Id:
+      - 170d5216-0d20-a48a-fbf4-6a54ad733ae9![
+      X-Ebay-Soa-Global-Id:
+      - ''
+      X-Ebay-Soa-Locale-List:
+      - en-US_US
+      X-Ebay-Soa-Message-Protocol:
+      - NONE
+      X-Ebay-Soa-Operation-Name:
+      - getSimilarItems
+      X-Ebay-Soa-Service-Metrics:
+      - '2452497700'
+      X-Ebay-Soa-Service-Name:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      X-Ebay-Soa-Service-Version:
+      - '1.5'
+      X-Ebay-Svc-Tracking-Data:
+      - "<a>ul=en-US&nqc=AA**&bs=0&nqt=AA**&!_epec=7,6&uc=1</a>"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 13 Mar 2020 18:21:39 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"getSimilarItemsResponse":{"ack":"Success","version":"1.0.0","timestamp":"2020-03-13T18:03:509.039Z","itemRecommendations":{"item":[{"itemId":"254533105032","title":"My
+        Struggle: Book Four by Knausgaard, Karl Ove","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Knausgaard-Karl-Ove/254533105032?_trkparms=mehot%3Dnone%26itm%3D254533105032%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P23DT22H35M33S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/Se4AAOSw4E5eYoDr/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"7.86"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"113943289311","title":"My
+        Struggle, Book Four by Karl Ove Knausgaard (English) Hardcover Book ","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Karl-Ove-Knausgaard-English-Hardcover-Book/113943289311?_trkparms=mehot%3Dnone%26itm%3D113943289311%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P17DT11H55M9S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/078AAOSw1IhcA2t3/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"10.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.86"}},{"itemId":"124108220572","title":"My
+        Struggle: Book 5: Some Rain Must Fall by Knausgaard, Karl Ove","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-5-Some-Rain-Must-Fall-by-Knausgaard-Karl-Ove/124108220572?_trkparms=mehot%3Dnone%26itm%3D124108220572%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P23DT5H58M44S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/XmkAAOSwtfhYsalj/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"5.48"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"361555770497","title":"My
+        Struggle, Book Three: Boyhood by Karl Ove Knausgaard (English) Hardcover Book","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Three-Boyhood-by-Karl-Ove-Knausgaard-English-Hardcover-Book/361555770497?_trkparms=mehot%3Dnone%26itm%3D361555770497%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P29DT0H20M7S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/6NsAAOSwlA9eYOXs/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"23.70"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"391150014664","title":"My
+        Struggle, Book Four by Karl Ove Knausgaard (English) Hardcover Book Free Ship","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Karl-Ove-Knausgaard-English-Hardcover-Book-Free-Ship/391150014664?_trkparms=mehot%3Dnone%26itm%3D391150014664%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P6DT19H14M19S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/vZIAAOSwxeleYO7F/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"24.15"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"184205092805","title":"MY
+        STRUGGLE: BOOK THREE By Karl Ove Knausgaard - Hardcover","viewItemURL":"https://www.ebay.com/itm/MY-STRUGGLE-BOOK-THREE-By-Karl-Ove-Knausgaard-Hardcover/184205092805?_trkparms=mehot%3Dnone%26itm%3D184205092805%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P27DT19H21M38S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/qeoAAOSwDM9eZ5l4/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"19.75"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"124115959285","title":"My
+        Struggle, Book Five by Karl Ove Knausgaard (2016, Hardcover)","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Five-by-Karl-Ove-Knausgaard-2016-Hardcover/124115959285?_trkparms=mehot%3Dnone%26itm%3D124115959285%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P30DT3H26M44S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/lhAAAOSwax5YnvoO/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"24.00"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"184111235203","title":"My
+        Struggle Bk. 1 by Karl Ove Knausgaard (2014, Hardcover)","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Bk-1-by-Karl-Ove-Knausgaard-2014-Hardcover/184111235203?_trkparms=mehot%3Dnone%26itm%3D184111235203%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P20DT18H30M22S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/IgUAAOSwd~RZONDI/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"24.41"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"282819379272","title":"My
+        Struggle, Book Four by Karl Ove Knausgaard: Used","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Karl-Ove-Knausgaard-Used/282819379272?_trkparms=mehot%3Dnone%26itm%3D282819379272%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P9DT5H4M35S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/NWgAAOSwXtNaZo6Z/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"3.96"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"}},{"itemId":"282819379222","title":"My
+        Struggle, Book Four by Karl Ove Knausgaard: New","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Karl-Ove-Knausgaard-New/282819379222?_trkparms=mehot%3Dlo%26itm%3D282819379222%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P9DT5H4M35S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/p24AAOSwSKtaZonn/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"16.56"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"}},{"itemId":"184194536500","title":"MY
+        STRUGGLE: BOOK TWO: A MAN IN LOVE By Karl Ove Knausgaard - Hardcover","viewItemURL":"https://www.ebay.com/itm/MY-STRUGGLE-BOOK-TWO-A-MAN-IN-LOVE-By-Karl-Ove-Knausgaard-Hardcover/184194536500?_trkparms=mehot%3Dnone%26itm%3D184194536500%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P19DT22H59M22S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/sQQAAOSwvFteXUCA/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"16.95"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"143245491581","title":"My
+        Struggle: Book Three by Knausgaard Karl Ove","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Three-by-Knausgaard-Karl-Ove/143245491581?_trkparms=mehot%3Dnone%26itm%3D143245491581%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P27DT3H26M55S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/QDEAAOSwUv9c1KA3/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"17.95"},"shippingCost":{"@currencyId":"USD","__value__":"2.99"}},{"itemId":"274291742422","title":"My
+        Struggle: Book 6 - Paperback By Knausgaard, Karl Ove - VERY GOOD","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-6-Paperback-By-Knausgaard-Karl-Ove-VERY-GOOD/274291742422?_trkparms=mehot%3Dnone%26itm%3D274291742422%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P18DT13H30M20S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/YCAAAOSwTp9eVw~~/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"17.48"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"282828949314","title":"My
+        Struggle, Book Five by Karl Ove Knausgaard: Used","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Five-by-Karl-Ove-Knausgaard-Used/282828949314?_trkparms=mehot%3Dlo%26itm%3D282828949314%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P17DT4H41M30S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/0jkAAOSwElpeTmf5/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"5.00"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"}},{"itemId":"360689681059","title":"My
+        Struggle: Book Two: A Man in Love by Karl Knausgaard (English) Hardcover Book","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Two-A-Man-in-Love-by-Karl-Knausgaard-English-Hardcover-Book/360689681059?_trkparms=mehot%3Dnone%26itm%3D360689681059%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P21DT11H1M58S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/6TsAAOSwIh1eYOX8/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"22.77"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"283588513156","title":"NEW
+        - My Struggle: Book Four by Knausgaard, Karl Ove","viewItemURL":"https://www.ebay.com/itm/NEW-My-Struggle-Book-Four-by-Knausgaard-Karl-Ove/283588513156?_trkparms=mehot%3Dnone%26itm%3D283588513156%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P8DT14H7M42S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/QBgAAOSwWxNYogZM/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"12.99"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"283474305154","title":"My
+        Struggle, Book Six by Karl Ove Knausgaard: Used","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Six-by-Karl-Ove-Knausgaard-Used/283474305154?_trkparms=mehot%3Dag%26itm%3D283474305154%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P22DT16H4M53S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/3KAAAOSwMX5czrpc/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"4.83"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"}},{"itemId":"283099420710","title":"My
+        Struggle, Book Three by Karl Ove Knausgaard: Used","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Three-by-Karl-Ove-Knausgaard-Used/283099420710?_trkparms=mehot%3Dnone%26itm%3D283099420710%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P29DT13H22M0S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/6J8AAOSwm-Zaue0n/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"16.52"},"shippingCost":{"@currencyId":"USD","__value__":"3.99"}},{"itemId":"254533122134","title":"My
+        Struggle: Book 2: A Man in Love - Paperback By Knausgaard, Karl Ove - GOOD","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-2-A-Man-in-Love-Paperback-By-Knausgaard-Karl-Ove-GOOD/254533122134?_trkparms=mehot%3Dnone%26itm%3D254533122134%26pmt%3D1%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P23DT22H52M34S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/5VoAAOSwMQ5eYaNR/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"7.24"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}},{"itemId":"133337008626","title":"My
+        Struggle, Book Four by Karl Ove Knausgaard 9780374534172 | Brand New","viewItemURL":"https://www.ebay.com/itm/My-Struggle-Book-Four-by-Karl-Ove-Knausgaard-9780374534172-Brand-New/133337008626?_trkparms=mehot%3Dnone%26itm%3D133337008626%26pmt%3D0%26noa%3D1&_trksid=p0","globalId":"EBAY-US","timeLeft":"P3DT23H10M23S","primaryCategoryId":"267","primaryCategoryName":"Books","country":"US","imageURL":"http://i.ebayimg.com/images/g/Pt0AAOSwhs1eTDT4/s-l225.jpg","shippingType":"NotSpecified","buyItNowPrice":{"@currencyId":"USD","__value__":"14.82"},"shippingCost":{"@currencyId":"USD","__value__":"0.00"}}]}}}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 18:21:39 GMT
+- request:
+    method: get
+    uri: https://svcs.sandbox.ebay.com/MerchandisingService?CONSUMER-ID=APP_ID&GLOBAL-ID&OPERATION-NAME=getVersion&RESPONSE-DATA-FORMAT=JSON&RESPONSE-PAYLOAD
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - svcs.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Guid:
+      - 170d5219-6a50-a0f1-7264-e78489ab0a8b
+      Rlogid:
+      - t6q%60eh9%3Fjqpwcdl%2853%3A4%3E%3E6%2Busqdrrp%2Bjqp%2Bceb%7C%28dlh-170d52196aa-0x194
+      Server:
+      - ebay-proxy-server
+      Set-Cookie:
+      - dp1=bu1p/QEBfX0BAX19AQA**622e3641^;Domain=.ebay.com;Expires=Sun, 13-Mar-2022
+        18:21:53 GMT;Path=/
+      - ebay=%5Esbf%3D%23%5E;Domain=.ebay.com;Path=/
+      X-Content-Type-Options:
+      - nosniff
+      X-Ebay-C-Request-Id:
+      - ri=J7nn%2BI2LowkK,rci=74ff7c40943b3e4c
+      X-Ebay-C-Version:
+      - 1.0.0
+      X-Ebay-Client-Tls-Version:
+      - 771, 10.18.131.60
+      X-Ebay-Request-Id:
+      - 170d5219-6a50-a0f1-7264-e78489ab0a8b!MerchandisingService!10.15.23.38!esbnewexsoaesb[!promo!lvsreco-3491895.stratus.lvs.ebay.com!r1reco[]
+      X-Ebay-Soa-Global-Id:
+      - ''
+      X-Ebay-Soa-Locale-List:
+      - en-US_US
+      X-Ebay-Soa-Message-Protocol:
+      - NONE
+      X-Ebay-Soa-Operation-Name:
+      - getVersion
+      X-Ebay-Soa-Service-Metrics:
+      - '2452497700'
+      X-Ebay-Soa-Service-Name:
+      - "{http://www.ebay.com/marketplace/services}MerchandisingService"
+      X-Ebay-Soa-Service-Version:
+      - '1.5'
+      X-Ebay-Svc-Tracking-Data:
+      - "<a>ul=en-US&nqc=AA**&bs=0&nqt=AA**&!_epec=7,6&uc=1</a>"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 13 Mar 2020 18:21:53 GMT
+      X-Envoy-Upstream-Service-Time:
+      - '19'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-svcs
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"getVersionResponse":{"ack":"Success","timestamp":"2020-03-13T18:03:198.053Z","version":"2.0"}}'
+    http_version: null
+  recorded_at: Fri, 13 Mar 2020 18:21:53 GMT
+recorded_with: VCR 5.1.0

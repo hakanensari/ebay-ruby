@@ -3,10 +3,9 @@
 require 'ebay/config'
 require 'ebay/finding'
 require 'ebay/merchandising'
-require 'ebay/product'
-require 'ebay/product_metadata'
 require 'ebay/shopping'
 
+# Ruby wrapper to the eBay APIs
 module Ebay
   def self.configure
     yield Config

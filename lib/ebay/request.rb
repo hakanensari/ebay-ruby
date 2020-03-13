@@ -1,38 +1,57 @@
 # frozen_string_literal: true
 
-require 'excon'
+require 'http'
+
 require 'ebay/config'
-require 'ebay/parser'
 
 module Ebay
+  # @abstract Subclass this class to implement an API
   class Request
-    %i[host path headers].each do |method|
-      eval <<-DEF, binding, __FILE__, __LINE__ + 1
-        def self.#{method}(&block)
-          block ? @#{method} = block : @#{method}.call
-        end
-
-        def #{method}
-          @#{method} ||= self.class.send(:#{method})
-        end
-      DEF
+    class << self
+      # @return [String]
+      attr_accessor :gateway_url
     end
 
-    def sandbox!
-      return if host.include?('sandbox')
+    # @return [String, nil]
+    attr_accessor :path
 
-      @host = host.sub('ebay', 'sandbox.ebay')
+    # @!attribute [r] url
+    # @return [String]
+    def url
+      [gateway_url, path].compact.join('/')
     end
 
-    def get(opts)
-      response = connection.get(opts)
-      Parser.new(response)
+    # @return [Hash]
+    attr_accessor :headers
+
+    # @!attribute [r] params
+    # @return [Hash]
+    def params
+      @params ||= {}
+    end
+
+    # @return [Hash]
+    attr_writer :params
+
+    # Runs the request in the eBay Sandbox environment
+    #
+    # @return [self]
+    def sandbox
+      @gateway_url = gateway_url.sub('ebay', 'sandbox.ebay')
+      self
+    end
+
+    protected
+
+    def get
+      HTTP.headers(headers)
+          .get(url, params: params)
     end
 
     private
 
-    def connection
-      Excon.new("https://#{host}#{path}", headers: headers)
+    def gateway_url
+      @gateway_url ||= self.class.gateway_url
     end
   end
 end

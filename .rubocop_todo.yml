@@ -1,11 +1,14 @@
+Metrics/ParameterLists:
+  Max: 6
+
+Naming/AccessorMethodName:
+  Enabled: false
 Naming/FileName:
   Enabled: false
 
 Security/Eval:
   Enabled: false
 
-Style/Documentation:
-  Enabled: false
 Style/HashEachMethods:
   Enabled: true
 Style/HashTransformKeys:
