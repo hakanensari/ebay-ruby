@@ -1,46 +1,64 @@
 # frozen_string_literal: true
 
-require 'ebay/request'
+require 'http'
+
+require 'ebay/config'
+require 'ebay/sandboxable'
 
 module Ebay
   # The eBay Shopping API makes it easy to search for things on eBay.
   #
+  # @see https://developer.ebay.com/Devzone/shopping/docs/Concepts/ShoppingAPI_FormatOverview.html
   # @see https://developer.ebay.com/Devzone/shopping/docs/CallRef/index.html
-  class Shopping < Request
-    self.gateway_url = 'https://open.api.ebay.com/shopping'
+  class Shopping
+    include Sandboxable
 
-    # @return [#to_s] the application ID
+    SANDBOX_ENDPOINT = 'https://open.api.sandbox.ebay.com/shopping'
+    PRODUCTION_ENDPOINT = 'https://open.api.ebay.com/shopping'
+
+    # @return [String]
     attr_reader :app_id
 
-    # @return [#to_s] the application ID
+    # @return [String, nil]
+    attr_reader :response_encoding
+
+    # @return [String, nil]
     attr_reader :site_id
 
-    # @return [#to_s] the API version that your application supports
+    # @return [String]
     attr_reader :version
 
-    # @return [#to_s] an ID to identify you to your tracking partner
+    # @return [String, nil]
+    attr_reader :version_handling
+
+    # @return [String, nil]
     attr_reader :tracking_id
 
-    # @return [#to_s] the third party who is your tracking partner
+    # @return [String, nil]
     attr_reader :tracking_partner_code
 
-    # @return [#to_s] a custom ID you can leverage to better monitor your
-    #   marketing efforts
+    # @return [String, nil]
     attr_reader :affiliate_user_id
 
     # Returns a Finding API request instance
     #
-    # @param [#to_s] app_id
-    # @param [#to_s] site_id
-    # @param [#to_s] tracking_id
-    # @param [#to_s] tracking_partner_code
-    # @param [#to_s] affiliate_user_id
-    def initialize(app_id: Config.app_id, site_id: nil, version: '1119',
-                   tracking_id: nil, tracking_partner_code: nil,
-                   affiliate_user_id: nil)
+    # @param [String] app_id
+    # @param [String] response_encoding
+    # @param [String] site_id
+    # @param [String] version
+    # @param [String] version_handling
+    # @param [String] tracking_id
+    # @param [String] tracking_partner_code
+    # @param [String] affiliate_user_id
+    def initialize(app_id: Config.app_id, response_encoding: 'JSON',
+                   site_id: nil, version: '1119',
+                   version_handling: nil, tracking_id: nil,
+                   tracking_partner_code: nil, affiliate_user_id: nil)
       @app_id = app_id
+      @response_encoding = response_encoding
       @site_id = site_id
       @version = version
+      @version_handling = version_handling
       @tracking_id = tracking_id
       @tracking_partner_code = tracking_partner_code
       @affiliate_user_id = affiliate_user_id
@@ -49,111 +67,96 @@ module Ebay
     # Returns one or more eBay catalog products based on a query string or
     # product ID value
     #
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_products(**arguments)
-      params.update(arguments)
-      build('FindProducts').get
+    def find_products(**payload)
+      request('FindProducts', payload)
     end
 
     # Retrieves high-level data for a specified eBay category
     #
     # @param [String] category_id
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_category_info(category_id, **arguments)
-      params.update('CategoryID' => category_id)
-            .update(arguments)
-
-      build('GetCategoryInfo').get
+    def get_category_info(category_id, **payload)
+      payload.update('CategoryID' => category_id)
+      request('GetCategoryInfo', payload)
     end
 
     # Gets the official eBay system time in GMT
     #
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_ebay_time(**arguments)
-      params.update(arguments)
-      build('GeteBayTime').get
+    def get_ebay_time(**payload)
+      request('GeteBayTime', payload)
     end
 
     # Retrieves the current status of up to 20 eBay listings
     #
     # @param [String] item_ids
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_item_status(*item_ids, **arguments)
-      params.update('ItemID' => item_ids.join(','))
-            .update(arguments)
-
-      build('GetItemStatus').get
+    def get_item_status(*item_ids, **payload)
+      payload.update('ItemID' => item_ids.join(','))
+      request('GetItemStatus', payload)
     end
 
     # Retrieves publicly available data for one or more listings
     #
     # @param [String] item_ids
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_multiple_items(*item_ids, **arguments)
-      params.update('ItemID' => item_ids.join(','))
-            .update(arguments)
-
-      build('GetMultipleItems').get
+    def get_multiple_items(*item_ids, **payload)
+      payload.update('ItemID' => item_ids.join(','))
+      request('GetMultipleItems', payload)
     end
 
     # Gets shipping costs for a listing
     #
     # @param [String] item_id
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_shipping_costs(item_id, **arguments)
-      params.update('ItemID' => item_id)
-            .update(arguments)
-
-      build('GetShippingCosts').get
+    def get_shipping_costs(item_id, **payload)
+      payload.update('ItemID' => item_id)
+      request('GetShippingCosts', payload)
     end
 
     # Gets publicly visible details about one listing
     #
     # @param [String] item_id
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_single_item(item_id, **arguments)
-      params.update('ItemID' => item_id)
-            .update(arguments)
-
-      build('GetSingleItem').get
+    def get_single_item(item_id, **payload)
+      payload.update('ItemID' => item_id)
+      request('GetSingleItem', payload)
     end
 
     # Retrieves user information
     #
     # @param [String] user_id
-    # @param [Hash] arguments
+    # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_user_profile(user_id, **arguments)
-      params.update('UserID' => user_id)
-            .update(arguments)
-
-      build('GetUserProfile').get
+    def get_user_profile(user_id, **payload)
+      payload.update('UserID' => user_id)
+      request('GetUserProfile', payload)
     end
 
     private
 
-    def build(verb)
-      self.params = default_params.update('callname' => verb)
-                                  .update(params)
+    def request(operation, payload = {})
+      endpoint = sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
+      params = { 'appid' => app_id,
+                 'callname' => operation,
+                 'requestencoding' => 'JSON',
+                 'responseencoding' => response_encoding,
+                 'siteid' => site_id,
+                 'version' => version,
+                 'versionhandling' => version_handling,
+                 'affiliateuserid' => affiliate_user_id,
+                 'trackingid' => tracking_id,
+                 'trackingpartnercode' => tracking_partner_code }.compact
 
-      self
-    end
-
-    def default_params
-      { 'affiliateuserid' => affiliate_user_id,
-        'appid' => app_id,
-        'responseencoding' => 'JSON',
-        'siteid' => site_id,
-        'trackingid' => tracking_id,
-        'trackingpartnercode' => tracking_partner_code,
-        'version' => version }.compact
+      HTTP.post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end

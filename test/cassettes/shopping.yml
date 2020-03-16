@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?UserID=shopspell&appid=APP_ID&callname=GetUserProfile&responseencoding=JSON&version=1119
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetSingleItem&requestencoding=JSON&responseencoding=JSON&version=1119
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"ItemID":"333112555211"}'
     headers:
       Connection:
       - close
@@ -19,138 +19,44 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '603'
+      - '1105'
       Expires:
       - Sat, 25 Dec 1999 00:00:00 GMT
       Last-Modified:
-      - Fri, 13 Mar 2020 18:27:55 GMT
+      - Mon, 16 Mar 2020 15:13:09 GMT
       X-Ebay-Api-Build-Tag:
       - E1139_CORE_APILW_19143404_R1
       X-Ebay-Api-Pool-Name:
       - ___cDRidW9rdGZpdWY=
       X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjcyPzIzMigyNSg2NjMoNTI9KDUwMzw/Mz02
+      - ___dGlsZHw3MCg+MzU1MigyNSgxOys3NzorNz87Pz43OzU=
       Content-Type:
       - text/plain;charset=utf-8
       X-Envoy-Upstream-Service-Time:
-      - '254'
+      - '143'
       X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
+      - UFES2-RNOAZ03-openapi
       Date:
-      - Fri, 13 Mar 2020 18:27:55 GMT
+      - Mon, 16 Mar 2020 15:13:09 GMT
       Server:
       - ebay-proxy-server
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:55.927Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","User":{"UserID":"shopspell","FeedbackPrivate":false,"FeedbackRatingStar":"YellowShooting","FeedbackScore":15890,"NewUser":false,"RegistrationDate":"2013-11-09T23:00:01.000Z","RegistrationSite":"US","Status":"Confirmed","SellerBusinessType":"Commercial","SellerItemsURL":"http://www.ebay.com/sch/shopspell/m.html?_nkw=&_armrs=1&_from=&_ipg","FeedbackDetailsURL":"http://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback&userid=shopspell&ssPageName=STRK:ME:UFS","PositiveFeedbackPercent":99.8}}'
-    http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:56 GMT
-- request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?ItemID=333112555211&appid=APP_ID&callname=GetItemStatus&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '329'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Fri, 13 Mar 2020 18:27:56 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjcyPzI2MigyNSg2NjMoNTMyKD40Pz43OzU=
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '48'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Fri, 13 Mar 2020 18:27:56 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:56.518Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","Item":[{"ItemID":"333112555211","EndTime":"2020-04-11T20:15:10.000Z","BidCount":0,"ConvertedCurrentPrice":{"Value":13.0,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT1H47M14S","GlobalShipping":true}]}'
-    http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:56 GMT
-- request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?ItemID=333112555211&appid=APP_ID&callname=GetSingleItem&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '1107'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Fri, 13 Mar 2020 18:27:57 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjcyPzIzMigyNSg2NjMoNTI9KDUwMzw/Mz02
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '82'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Fri, 13 Mar 2020 18:27:57 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:57.177Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","Item":{"ItemID":"333112555211","EndTime":"2020-04-11T20:15:10.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/My-Struggle-Book-Four-Karl-Ove-Knausgaard-2014-Hardcover-/333112555211","ListingType":"FixedPriceItem","Location":"Sarasota,
+      string: '{"Timestamp":"2020-03-16T15:13:09.454Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","Item":{"ItemID":"333112555211","EndTime":"2020-04-11T20:15:10.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/My-Struggle-Book-Four-Karl-Ove-Knausgaard-2014-Hardcover-/333112555211","ListingType":"FixedPriceItem","Location":"Sarasota,
         Florida","GalleryURL":"https://thumbs4.ebaystatic.com/pict/3331125552118080_1.jpg","PictureURL":["https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/VIgAAOSwBCdchsEq/$_12.JPG?set_id=880000500F","https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/CakAAOSwPtBchsEt/$_12.JPG?set_id=880000500F","https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/~9gAAOSw0lhchsEv/$_12.JPG?set_id=880000500F"],"PrimaryCategoryID":"171228","PrimaryCategoryName":"Books:Fiction
-        & Literature","BidCount":0,"ConvertedCurrentPrice":{"Value":13.0,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT1H47M13S","Title":"My
+        & Literature","BidCount":0,"ConvertedCurrentPrice":{"Value":13.0,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P26DT5H2M1S","Title":"My
         Struggle Book Four by Karl Ove Knausgaard (2014, Hardcover)","Country":"US","AutoPay":true,"ConditionID":1000,"ConditionDisplayName":"Brand
         New","GlobalShipping":true}}'
     http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:57 GMT
+  recorded_at: Mon, 16 Mar 2020 15:13:09 GMT
 - request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?CategoryID=267&appid=APP_ID&callname=GetCategoryInfo&responseencoding=JSON&version=1119
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetItemStatus&requestencoding=JSON&responseencoding=JSON&version=1119
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"ItemID":"333112555211"}'
     headers:
       Connection:
       - close
@@ -164,40 +70,41 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '382'
+      - '358'
       Expires:
       - Sat, 25 Dec 1999 00:00:00 GMT
       Last-Modified:
-      - Fri, 13 Mar 2020 18:27:57 GMT
+      - Mon, 16 Mar 2020 15:13:10 GMT
       X-Ebay-Api-Build-Tag:
       - E1139_CORE_APILW_19143404_R1
       X-Ebay-Api-Pool-Name:
       - ___cDRidW9rdGZpdWY=
       X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjE2Nzo9MigyNSg2OjAoNTI0KDQ0Pz43OzU=
+      - ___dGlsZHw3Mig/NDMyNjIsNDYpNDcoNjQ0KDUwMjw/Mz02
       Content-Type:
       - text/plain;charset=utf-8
       X-Envoy-Upstream-Service-Time:
-      - '69'
+      - '16'
       X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
+      - UFES2-RNOAZ03-openapi
       Date:
-      - Fri, 13 Mar 2020 18:27:57 GMT
+      - Mon, 16 Mar 2020 15:13:09 GMT
       Server:
       - ebay-proxy-server
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:57.767Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","CategoryArray":{"Category":[{"CategoryID":"267","CategoryLevel":1,"CategoryName":"Books","CategoryParentID":"-1","CategoryNamePath":"Books","CategoryIDPath":"267","LeafCategory":false}]},"CategoryCount":1,"UpdateTime":"2019-10-15T03:29:16.000Z","CategoryVersion":"121"}'
+      string: '{"Ack":"Failure","Errors":[{"ShortMessage":"Input data is invalid.","LongMessage":"Input
+        data for the given tag is invalid or missing. Please check API documentation.","ErrorCode":"1.22","SeverityCode":"Error","ErrorParameters":[{"Value":"ItemID","ParamID":"0"}],"ErrorClassification":"RequestError"}],"Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
     http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:57 GMT
+  recorded_at: Mon, 16 Mar 2020 15:13:10 GMT
 - request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?DestinationCountryCode=GB&ItemID=333112555211&appid=APP_ID&callname=GetShippingCosts&responseencoding=JSON&version=1119
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetMultipleItems&requestencoding=JSON&responseencoding=JSON&version=1119
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"ItemID":"333112555211,322539683928"}'
     headers:
       Connection:
       - close
@@ -211,204 +118,41 @@ http_interactions:
       message: OK
     headers:
       Content-Length:
-      - '432'
+      - '358'
       Expires:
       - Sat, 25 Dec 1999 00:00:00 GMT
       Last-Modified:
-      - Fri, 13 Mar 2020 18:27:58 GMT
+      - Mon, 16 Mar 2020 15:13:10 GMT
       X-Ebay-Api-Build-Tag:
       - E1139_CORE_APILW_19143404_R1
       X-Ebay-Api-Pool-Name:
       - ___cDRidW9rdGZpdWY=
       X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjE2NzoyNCgyNSg2OjAoNjoxKDY0MTw/Mz02
+      - ___dWtgNTEqMjcyPzE1MCgyNSg2NjMoNTI8KDI2Pz43OzU=
       Content-Type:
       - text/plain;charset=utf-8
       X-Envoy-Upstream-Service-Time:
-      - '320'
+      - '7'
       X-Ebay-Pop-Id:
       - UFES2-SLCAZ01-openapi
       Date:
-      - Fri, 13 Mar 2020 18:27:58 GMT
+      - Mon, 16 Mar 2020 15:13:10 GMT
       Server:
       - ebay-proxy-server
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:58.673Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","ShippingCostSummary":{"ShippingServiceName":"International
-        Priority Shipping","ShippingServiceCost":{"Value":17.15,"CurrencyID":"USD"},"ShippingType":"Calculated","InsuranceOption":"NotOffered","ListedShippingServiceCost":{"Value":17.150000000000002,"CurrencyID":"USD"},"ImportCharge":{"Value":0.0,"CurrencyID":"USD"}}}'
+      string: '{"Ack":"Failure","Errors":[{"ShortMessage":"Input data is invalid.","LongMessage":"Input
+        data for the given tag is invalid or missing. Please check API documentation.","ErrorCode":"1.22","SeverityCode":"Error","ErrorParameters":[{"Value":"ItemID","ParamID":"0"}],"ErrorClassification":"RequestError"}],"Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
     http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:58 GMT
+  recorded_at: Mon, 16 Mar 2020 15:13:10 GMT
 - request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?callname=GeteBayTime
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GeteBayTime&requestencoding=JSON&responseencoding=JSON&version=1119
     body:
       encoding: UTF-8
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '931'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Fri, 13 Mar 2020 18:27:59 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMTE1NDY8MCgyNSg1MzcoPzIrNzA1Pz43OzU=
-      Content-Type:
-      - text/xml;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '30'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Fri, 13 Mar 2020 18:27:58 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n  <GeteBayTimeResponse
-        xmlns=\"urn:ebay:apis:eBLBaseComponents\">\n   <Timestamp>2020-03-13T18:27:59.254Z</Timestamp>\n
-        \  <Ack>Failure</Ack>\n   <Errors>\n    <ShortMessage>Missing required application
-        ID.</ShortMessage>\n    <LongMessage>Missing required application ID. Please
-        specify as URL parameter or HTTP header.</LongMessage>\n    <ErrorCode>1.26</ErrorCode>\n
-        \   <SeverityCode>Error</SeverityCode>\n    <ErrorClassification>RequestError</ErrorClassification>\n
-        \  </Errors>\n   <Errors>\n    <ShortMessage>Missing required version.</ShortMessage>\n
-        \   <LongMessage>Missing required version. Please specify as URL parameter
-        or HTTP header.</LongMessage>\n    <ErrorCode>1.27</ErrorCode>\n    <SeverityCode>Error</SeverityCode>\n
-        \   <ErrorClassification>RequestError</ErrorClassification>\n   </Errors>\n
-        \  <Build>E1139_CORE_APILW_19143404_R1</Build>\n   <Version>1139</Version>\n
-        \ </GeteBayTimeResponse>\n "
-    http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:27:59 GMT
-- request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?ItemID=333112555211,322539683928&appid=APP_ID&callname=GetMultipleItems&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '1913'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Fri, 13 Mar 2020 18:27:59 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjE2Nzo8PigyNSg2NjMoNTIzKDE3Pz43OzU=
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '104'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Fri, 13 Mar 2020 18:27:59 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:27:59.907Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","Item":[{"ItemID":"333112555211","EndTime":"2020-04-11T20:15:10.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/My-Struggle-Book-Four-Karl-Ove-Knausgaard-2014-Hardcover-/333112555211","ListingType":"FixedPriceItem","Location":"Sarasota,
-        Florida","GalleryURL":"https://thumbs4.ebaystatic.com/pict/3331125552118080_1.jpg","PictureURL":["https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/VIgAAOSwBCdchsEq/$_12.JPG?set_id=880000500F","https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/CakAAOSwPtBchsEt/$_12.JPG?set_id=880000500F","https://i.ebayimg.com/00/s/MTYwMFgxMjAw/z/~9gAAOSw0lhchsEv/$_12.JPG?set_id=880000500F"],"PrimaryCategoryID":"171228","PrimaryCategoryName":"Books:Fiction
-        & Literature","BidCount":0,"ConvertedCurrentPrice":{"Value":13.0,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT1H47M11S","Title":"My
-        Struggle Book Four by Karl Ove Knausgaard (2014, Hardcover)","HitCount":874,"Country":"US","AutoPay":true,"ConditionID":1000,"ConditionDisplayName":"Brand
-        New","GlobalShipping":true},{"ItemID":"322539683928","EndTime":"2020-04-02T03:52:02.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/My-Struggle-Book-2-Man-Love-Karl-Ove-Knausgaard-/322539683928","ListingType":"FixedPriceItem","Location":"Wharton,
-        New Jersey","GalleryURL":"https://thumbs1.ebaystatic.com/pict/3225396839288080_2.jpg","PictureURL":["https://i.ebayimg.com/images/g/WqMAAOSwjk9ZOZUY/s-l640.jpg"],"PrimaryCategoryID":"171228","PrimaryCategoryName":"Books:Fiction
-        & Literature","BidCount":0,"ConvertedCurrentPrice":{"Value":18.33,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P19DT9H24M3S","Title":"My
-        Struggle: Book 2: A Man In Love: By Karl Ove Knausgaard","HitCount":378,"Country":"US","AutoPay":true,"ConditionID":1000,"ConditionDisplayName":"Brand
-        New","GlobalShipping":true}]}'
-    http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:28:00 GMT
-- request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?QueryKeywords=tolkien&appid=APP_ID&callname=FindProducts&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '846'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Fri, 13 Mar 2020 18:28:00 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1119_CORE_APILW2_19037571_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdDdlaHFg
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjcyPjIxNigyNSg2NjMoNTM2KDU0Pz43OzU=
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '109'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Fri, 13 Mar 2020 18:28:00 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:28:00.581Z","Ack":"Success","Build":"E1119_CORE_APILW2_19037571_R1","Version":"1119","ApproximatePages":2186,"MoreResults":true,"PageNumber":1,"Product":[{"DetailsURL":"http://www.ebay.com/p/115031#ProductDetails","DisplayStockPhotos":true,"ProductID":[{"Value":"115031","Type":"Reference"},{"Value":"9780345339683","Type":"ISBN"},{"Value":"9780345339683","Type":"EAN"}],"ItemSpecifics":{"NameValueList":[{"Name":"Format","Value":["Paperback"]},{"Name":"Publication
-        Year","Value":["1986"]},{"Name":"Author","Value":["J.R.R. Tolkien"]},{"Name":"Language","Value":["English"]}]},"StockPhotoURL":"https://i.ebayimg.com/images/g/xokAAOSwCU1YpPSB/s-l640.jpg","Title":"Pre-Lord
-        of the Rings: The Hobbit : The Enchanting Prelude to the Lord of the Rings
-        by J. R. R. Tolkien (1986, Paperback, Revised)"}],"TotalProducts":2186}'
-    http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:28:00 GMT
-- request:
-    method: get
-    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GeteBayTime&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: ''
+      string: "{}"
     headers:
       Connection:
       - close
@@ -426,28 +170,220 @@ http_interactions:
       Expires:
       - Sat, 25 Dec 1999 00:00:00 GMT
       Last-Modified:
-      - Fri, 13 Mar 2020 18:28:33 GMT
+      - Mon, 16 Mar 2020 15:13:11 GMT
       X-Ebay-Api-Build-Tag:
       - E1139_CORE_APILW_19143404_R1
       X-Ebay-Api-Pool-Name:
       - ___cDRidW9rdGZpdWY=
       X-Ebay-Api-Server-Name:
-      - ___dGlsZHw3MCg+MzUzMygyNSgwNis/Ni03MzU5PTY/Mw==
+      - ___dWtgNTEqMjcyPzI2MSgyNSg2NjMoNTI3KDU3Pz43OzU=
       Content-Type:
       - text/plain;charset=utf-8
       X-Envoy-Upstream-Service-Time:
-      - '40'
+      - '67'
       X-Ebay-Pop-Id:
-      - UFES2-RNOAZ03-openapi
+      - UFES2-SLCAZ01-openapi
       Date:
-      - Fri, 13 Mar 2020 18:28:33 GMT
+      - Mon, 16 Mar 2020 15:13:11 GMT
       Server:
       - ebay-proxy-server
       Connection:
       - close
     body:
       encoding: UTF-8
-      string: '{"Timestamp":"2020-03-13T18:28:33.891Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
+      string: '{"Timestamp":"2020-03-16T15:13:11.173Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
     http_version: null
-  recorded_at: Fri, 13 Mar 2020 18:28:33 GMT
+  recorded_at: Mon, 16 Mar 2020 15:13:11 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=FindProducts&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"QueryKeywords":"tolkien"}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '846'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Mon, 16 Mar 2020 15:13:11 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1119_CORE_APILW2_19037571_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdDdlaHFg
+      X-Ebay-Api-Server-Name:
+      - ___dGlsZHw3MigxMDo8NzEsNDYpNDcoNjY8KDM7Pz43OzU=
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '113'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-openapi
+      Date:
+      - Mon, 16 Mar 2020 15:13:11 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-03-16T15:13:11.894Z","Ack":"Success","Build":"E1119_CORE_APILW2_19037571_R1","Version":"1119","ApproximatePages":2186,"MoreResults":true,"PageNumber":1,"Product":[{"DetailsURL":"http://www.ebay.com/p/115031#ProductDetails","DisplayStockPhotos":true,"ProductID":[{"Value":"115031","Type":"Reference"},{"Value":"9780345339683","Type":"ISBN"},{"Value":"9780345339683","Type":"EAN"}],"ItemSpecifics":{"NameValueList":[{"Name":"Format","Value":["Paperback"]},{"Name":"Publication
+        Year","Value":["1986"]},{"Name":"Author","Value":["J.R.R. Tolkien"]},{"Name":"Language","Value":["English"]}]},"StockPhotoURL":"https://i.ebayimg.com/images/g/xokAAOSwCU1YpPSB/s-l640.jpg","Title":"Pre-Lord
+        of the Rings: The Hobbit : The Enchanting Prelude to the Lord of the Rings
+        by J. R. R. Tolkien (1986, Paperback, Revised)"}],"TotalProducts":2186}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 15:13:11 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetUserProfile&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"UserID":"shopspell"}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '603'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Mon, 16 Mar 2020 15:13:12 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1139_CORE_APILW_19143404_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdGZpdWY=
+      X-Ebay-Api-Server-Name:
+      - ___dGlsZHw3MSgwPzI8NjcsNDYpMTQ3KTA9KDUwPTw/Mz02
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '34'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-openapi
+      Date:
+      - Mon, 16 Mar 2020 15:13:12 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-03-16T15:13:12.469Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","User":{"UserID":"shopspell","FeedbackPrivate":false,"FeedbackRatingStar":"YellowShooting","FeedbackScore":15906,"NewUser":false,"RegistrationDate":"2013-11-09T23:00:01.000Z","RegistrationSite":"US","Status":"Confirmed","SellerBusinessType":"Commercial","SellerItemsURL":"http://www.ebay.com/sch/shopspell/m.html?_nkw=&_armrs=1&_from=&_ipg","FeedbackDetailsURL":"http://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback&userid=shopspell&ssPageName=STRK:ME:UFS","PositiveFeedbackPercent":99.8}}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 15:13:12 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetCategoryInfo&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"CategoryID":"267"}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '382'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Mon, 16 Mar 2020 15:13:13 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1139_CORE_APILW_19143404_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdGZpdWY=
+      X-Ebay-Api-Server-Name:
+      - ___dGlsZHw3MSgwPzI9PjEsNDYpNDIoMC08PD8zPTY=
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '22'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-openapi
+      Date:
+      - Mon, 16 Mar 2020 15:13:12 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-03-16T15:13:13.049Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","CategoryArray":{"Category":[{"CategoryID":"267","CategoryLevel":1,"CategoryName":"Books","CategoryParentID":"-1","CategoryNamePath":"Books","CategoryIDPath":"267","LeafCategory":false}]},"CategoryCount":1,"UpdateTime":"2019-10-15T03:29:16.000Z","CategoryVersion":"121"}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 15:13:13 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetShippingCosts&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"DestinationCountryCode":"GB","ItemID":"333112555211"}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '432'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Mon, 16 Mar 2020 15:13:14 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1139_CORE_APILW_19143404_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdGZpdWY=
+      X-Ebay-Api-Server-Name:
+      - ___dGlsZHw3Mig/NDMzMTAsNDYpND0oNjAzKDYwMjw/Mz02
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '976'
+      X-Ebay-Pop-Id:
+      - UFES2-RNOAZ03-openapi
+      Date:
+      - Mon, 16 Mar 2020 15:13:14 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-03-16T15:13:14.580Z","Ack":"Success","Build":"E1139_CORE_APILW_19143404_R1","Version":"1139","ShippingCostSummary":{"ShippingServiceName":"International
+        Priority Shipping","ShippingServiceCost":{"Value":17.15,"CurrencyID":"USD"},"ShippingType":"Calculated","InsuranceOption":"NotOffered","ListedShippingServiceCost":{"Value":17.150000000000002,"CurrencyID":"USD"},"ImportCharge":{"Value":0.0,"CurrencyID":"USD"}}}'
+    http_version: null
+  recorded_at: Mon, 16 Mar 2020 15:13:14 GMT
 recorded_with: VCR 5.1.0

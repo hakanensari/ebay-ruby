@@ -15,23 +15,23 @@ module Ebay
     end
 
     def test_get_most_watched_items
-      response = @request.get_most_watched_items('categoryId' => 267)
-      assert_success response
+      response = @request.get_most_watched_items('categoryId' => '267')
+      assert response.status.ok?
     end
 
     def test_get_related_category_items
       response = @request.get_related_category_items('categoryId' => '267')
-      assert_success response
+      assert response.status.ok?
     end
 
     def test_get_similar_items
       response = @request.get_similar_items('333112555211')
-      assert_success response
+      assert response.status.ok?
     end
 
     def test_get_version
       response = @request.get_version
-      assert_success response
+      assert response.status.ok?
     end
   end
 end

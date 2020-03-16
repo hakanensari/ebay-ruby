@@ -1,12 +1,11 @@
+Metrics/MethodLength:
+  Max: 12
 Metrics/ParameterLists:
-  Max: 6
+  Max: 8
 
 Naming/AccessorMethodName:
   Enabled: false
 Naming/FileName:
-  Enabled: false
-
-Security/Eval:
   Enabled: false
 
 Style/HashEachMethods:
