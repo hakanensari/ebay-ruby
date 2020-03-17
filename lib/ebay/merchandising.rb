@@ -63,7 +63,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_similar_items(item_id, payload = {})
-      payload.update('itemId' => item_id)
+      payload = payload.merge('itemId' => item_id)
       request('getSimilarItems', payload)
     end
 

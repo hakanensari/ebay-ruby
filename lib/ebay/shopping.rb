@@ -76,7 +76,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_category_info(category_id, payload = {})
-      payload.update('CategoryID' => category_id)
+      payload = payload.merge('CategoryID' => category_id)
       request('GetCategoryInfo', payload)
     end
 
@@ -96,7 +96,7 @@ module Ebay
     #   @return [HTTP::Response]
     def get_item_status(*item_ids)
       payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
-      payload.update('ItemID' => item_ids.join(','))
+      payload = payload.merge('ItemID' => item_ids.join(','))
       request('GetItemStatus', payload)
     end
 
@@ -108,7 +108,7 @@ module Ebay
     #   @return [HTTP::Response]
     def get_multiple_items(*item_ids)
       payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
-      payload.update('ItemID' => item_ids.join(','))
+      payload = payload.merge('ItemID' => item_ids.join(','))
 
       request('GetMultipleItems', payload)
     end
@@ -119,7 +119,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_shipping_costs(item_id, payload = {})
-      payload.update('ItemID' => item_id)
+      payload = payload.merge('ItemID' => item_id)
       request('GetShippingCosts', payload)
     end
 
@@ -129,7 +129,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_single_item(item_id, payload = {})
-      payload.update('ItemID' => item_id)
+      payload = payload.merge('ItemID' => item_id)
       request('GetSingleItem', payload)
     end
 
@@ -139,7 +139,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_user_profile(user_id, payload = {})
-      payload.update('UserID' => user_id)
+      payload = payload.merge('UserID' => user_id)
       request('GetUserProfile', payload)
     end
 

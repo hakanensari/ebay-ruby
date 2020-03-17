@@ -53,7 +53,7 @@ module Ebay
     #
     # @param [Hash] params
     # @return [HTTP::Response]
-    def search(**params)
+    def search(params = {})
       url = build_url('item_summary', 'search')
       http.headers(build_headers).get(url, params: params)
     end
@@ -63,7 +63,7 @@ module Ebay
     # @param [File] image
     # @param [Hash] params
     # @return [HTTP::Response]
-    def search_by_image(image, **params)
+    def search_by_image(image, params = {})
       url = build_url('item_summary', 'search_by_image')
       headers = build_headers.update('CONTENT-TYPE' => 'application/json')
       encoded_string = Base64.encode64(image.read)
@@ -77,9 +77,9 @@ module Ebay
     # @param [String] item_id
     # @param [Hash] params
     # @return [HTTP::Response]
-    def get_item(item_id, **params)
+    def get_item(item_id, params = {})
       url = build_url('item', item_id)
-      params.update(item_id: item_id)
+      params = params.merge(item_id: item_id)
 
       http.headers(build_headers).get(url, params: params)
     end
@@ -89,9 +89,9 @@ module Ebay
     # @param [String] legacy_item_id
     # @param [Hash] params
     # @return [HTTP::Response]
-    def get_item_by_legacy_id(legacy_item_id, **params)
+    def get_item_by_legacy_id(legacy_item_id, params = {})
       url = build_url('item', 'get_item_by_legacy_id')
-      params.update(legacy_item_id: legacy_item_id)
+      params = params.merge(legacy_item_id: legacy_item_id)
 
       http.headers(build_headers).get(url, params: params)
     end

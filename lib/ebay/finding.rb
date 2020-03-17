@@ -77,7 +77,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_by_keywords(keywords, payload = {})
-      payload.update('keywords' => keywords)
+      payload = payload.merge('keywords' => keywords)
       request('findItemsByKeywords', payload)
     end
 
@@ -88,8 +88,8 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_by_product(product_id, product_id_type, payload = {})
-      payload.update('productId' => product_id,
-                     'productId.@type' => product_id_type)
+      payload = payload.merge('productId' => product_id,
+                              'productId.@type' => product_id_type)
 
       request('findItemsByProduct', payload)
     end
