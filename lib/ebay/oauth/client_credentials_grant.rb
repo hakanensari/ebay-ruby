@@ -3,6 +3,7 @@
 require 'http'
 
 require 'ebay/config'
+require 'ebay/sandboxable'
 
 module Ebay
   module Oauth
@@ -10,7 +11,10 @@ module Ebay
     #
     # @see https://developer.ebay.com/api-docs/static/oauth-client-credentials-grant.html
     class ClientCredentialsGrant
-      URL = 'https://api.ebay.com/identity/v1/oauth2/token'
+      include Sandboxable
+
+      SANDBOX_ENDPOINT = 'https://api.sandbox.ebay.com/identity/v1/oauth2/token'
+      PRODUCTION_ENDPOINT = 'https://api.ebay.com/identity/v1/oauth2/token'
 
       # @return [String]
       attr_reader :app_id
@@ -40,18 +44,10 @@ module Ebay
             .post(url, form: payload)
       end
 
-      # Runs the request in the eBay sandbox environment
-      def sandbox
-        @url = URL.sub('ebay', 'sandbox.ebay')
-        self
-      end
-
       private
 
-      # The endpoint URL
-      # @return [String]
       def url
-        @url ||= URL
+        sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
       end
 
       def payload
