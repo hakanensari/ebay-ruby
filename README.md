@@ -1,5 +1,7 @@
 # ebay-ruby
 
+[![Build](https://github.com/hakanensari/ebay-ruby/workflows/build/badge.svg)](https://github.com/hakanensari/ebay-ruby/actions)
+
 A Ruby wrapper to the [eBay APIs]
 
 ## Usage
