@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'base64'
+
 require 'ebay/config'
 require 'ebay/requestable'
 
@@ -58,13 +60,14 @@ module Ebay
 
     # Searches for eBay items based on a image and retrieves their summaries
     #
-    # @param [String] image the Base64 string of the image
+    # @param [File] image
     # @param [Hash] params
     # @return [HTTP::Response]
     def search_by_image(image, **params)
       url = build_url('item_summary', 'search_by_image')
       headers = build_headers.update('CONTENT-TYPE' => 'application/json')
-      body = JSON.dump(image: image)
+      encoded_string = Base64.encode64(image.read)
+      body = JSON.dump(image: encoded_string)
 
       http.headers(headers).post(url, params: params, body: body)
     end

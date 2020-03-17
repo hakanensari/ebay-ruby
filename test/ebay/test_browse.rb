@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'base64'
-
 require 'helper'
 require 'ebay/browse'
 require 'ebay/oauth/client_credentials_grant'
@@ -31,8 +29,7 @@ module Ebay
 
     def test_search_by_image
       image = File.open('./test/data/product.jpg')
-      encoded_string = Base64.encode64(image.read)
-      response = @request.search_by_image(encoded_string)
+      response = @request.search_by_image(image)
       data = JSON.parse(response)
       assert data.key?('itemSummaries')
     end
