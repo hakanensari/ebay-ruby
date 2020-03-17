@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'http'
-
 require 'ebay/config'
-require 'ebay/sandboxable'
+require 'ebay/requestable'
 
 module Ebay
   # The Finding API lets you search for and browse items listed on eBay and
@@ -12,10 +10,9 @@ module Ebay
   # @see https://developer.ebay.com/Devzone/finding/Concepts/MakingACall.html
   # @see https://developer.ebay.com/Devzone/finding/CallRef/index.html
   class Finding
-    include Sandboxable
+    include Requestable
 
-    SANDBOX_ENDPOINT = 'https://svcs.sandbox.ebay.com/services/search/FindingService/v1'
-    PRODUCTION_ENDPOINT = 'https://svcs.ebay.com/services/search/FindingService/v1'
+    self.endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1'
 
     # @return [String, nil]
     attr_reader :global_id
@@ -133,7 +130,6 @@ module Ebay
     private
 
     def request(operation, payload = {})
-      url = sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
       params = { 'GLOBAL-ID' => global_id,
                  'MESSAGE-ENCODING' => message_encoding,
                  'OPERATION-NAME' => operation,
@@ -142,7 +138,7 @@ module Ebay
                  'SECURITY-APPNAME' => security_appname,
                  'SERVICE-VERSION' => service_version }.compact
 
-      HTTP.post(url, params: params, body: JSON.dump(payload))
+      http.post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end

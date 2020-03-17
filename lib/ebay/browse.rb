@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'http'
-
 require 'ebay/config'
-require 'ebay/sandboxable'
+require 'ebay/requestable'
 
 module Ebay
   # Using the Browse API, you can create a rich selection of items for your
@@ -13,10 +11,9 @@ module Ebay
   #
   # @see https://developer.ebay.com/api-docs/buy/browse/overview.html
   class Browse
-    include Sandboxable
+    include Requestable
 
-    SANDBOX_ENDPOINT = 'https://api.sandbox.ebay.com/buy/browse/v1'
-    PRODUCTION_ENDPOINT = 'https://api.ebay.com/buy/browse/v1'
+    self.endpoint = 'https://api.ebay.com/buy/browse/v1'
 
     # @return [String]
     attr_reader :campaign_id
@@ -56,7 +53,7 @@ module Ebay
     # @return [HTTP::Response]
     def search(**params)
       url = build_url('item_summary', 'search')
-      HTTP.headers(build_headers).get(url, params: params)
+      http.headers(build_headers).get(url, params: params)
     end
 
     # Searches for eBay items based on a image and retrieves their summaries
@@ -69,7 +66,7 @@ module Ebay
       headers = build_headers.update('CONTENT-TYPE' => 'application/json')
       body = JSON.dump(image: image)
 
-      HTTP.headers(headers).post(url, params: params, body: body)
+      http.headers(headers).post(url, params: params, body: body)
     end
 
     # Retrieves the details of a specific item
@@ -81,7 +78,7 @@ module Ebay
       url = build_url('item', item_id)
       params.update(item_id: item_id)
 
-      HTTP.headers(build_headers).get(url, params: params)
+      http.headers(build_headers).get(url, params: params)
     end
 
     # Retrieves the details of a specific item using its legacy item ID
@@ -93,7 +90,7 @@ module Ebay
       url = build_url('item', 'get_item_by_legacy_id')
       params.update(legacy_item_id: legacy_item_id)
 
-      HTTP.headers(build_headers).get(url, params: params)
+      http.headers(build_headers).get(url, params: params)
     end
 
     # Retrieves the details of the individual items in an item group
@@ -104,7 +101,7 @@ module Ebay
       url = build_url('item', 'get_items_by_item_group')
       params = { item_group_id: item_group_id }
 
-      HTTP.headers(build_headers).get(url, params: params)
+      http.headers(build_headers).get(url, params: params)
     end
 
     # Retrieves the details of the individual items in an item group
@@ -119,7 +116,7 @@ module Ebay
                      'CONTENT-TYPE' => 'application/json')
       body = JSON.dump('compatibilityProperties' => compatibility_properties)
 
-      HTTP.headers(headers).post(url, body: body)
+      http.headers(headers).post(url, body: body)
     end
 
     def add_item
@@ -141,7 +138,6 @@ module Ebay
     private
 
     def build_url(*resources, operation)
-      endpoint = sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
       [endpoint, *resources, operation].join('/')
     end
 

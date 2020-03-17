@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'http'
-
 require 'ebay/config'
-require 'ebay/sandboxable'
+require 'ebay/requestable'
 
 module Ebay
   module Oauth
@@ -11,10 +9,9 @@ module Ebay
     #
     # @see https://developer.ebay.com/api-docs/static/oauth-client-credentials-grant.html
     class ClientCredentialsGrant
-      include Sandboxable
+      include Requestable
 
-      SANDBOX_ENDPOINT = 'https://api.sandbox.ebay.com/identity/v1/oauth2/token'
-      PRODUCTION_ENDPOINT = 'https://api.ebay.com/identity/v1/oauth2/token'
+      self.endpoint = 'https://api.ebay.com/identity/v1/oauth2/token'
 
       # @return [String]
       attr_reader :app_id
@@ -41,14 +38,10 @@ module Ebay
       # @return [HTTP::Response]
       def request
         HTTP.basic_auth(user: app_id, pass: cert_id)
-            .post(url, form: payload)
+            .post(endpoint, form: payload)
       end
 
       private
-
-      def url
-        sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
-      end
 
       def payload
         { grant_type: 'client_credentials',

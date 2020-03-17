@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'http'
-
 require 'ebay/config'
-require 'ebay/sandboxable'
+require 'ebay/requestable'
 
 module Ebay
   # Retrieves information about products or item listings on eBay to help you
@@ -12,10 +10,9 @@ module Ebay
   # @see https://developer.ebay.com/Devzone/merchandising/docs/Concepts/MerchandisingAPI_FormatOverview.html
   # @see https://developer.ebay.com/Devzone/merchandising/docs/CallRef/index.html
   class Merchandising
-    include Sandboxable
+    include Requestable
 
-    SANDBOX_ENDPOINT = 'https://svcs.sandbox.ebay.com/MerchandisingService'
-    PRODUCTION_ENDPOINT = 'https://svcs.ebay.com/MerchandisingService'
+    self.endpoint = 'https://svcs.ebay.com/MerchandisingService'
 
     # @return [String]
     attr_reader :consumer_id
@@ -80,7 +77,6 @@ module Ebay
     private
 
     def request(operation, payload = {})
-      endpoint = sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
       params = { 'CONSUMER-ID' => consumer_id,
                  'GLOBAL-ID' => global_id,
                  'OPERATION-NAME' => operation,
@@ -88,7 +84,7 @@ module Ebay
                  'RESPONSE-DATA-FORMAT' => response_data_format,
                  'SERVICE-VERSION' => service_version }.compact
 
-      HTTP.post(endpoint, params: params, body: JSON.dump(payload))
+      http.post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end

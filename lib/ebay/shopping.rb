@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require 'http'
-
 require 'ebay/config'
-require 'ebay/sandboxable'
+require 'ebay/requestable'
 
 module Ebay
   # The eBay Shopping API makes it easy to search for things on eBay.
@@ -11,10 +9,9 @@ module Ebay
   # @see https://developer.ebay.com/Devzone/shopping/docs/Concepts/ShoppingAPI_FormatOverview.html
   # @see https://developer.ebay.com/Devzone/shopping/docs/CallRef/index.html
   class Shopping
-    include Sandboxable
+    include Requestable
 
-    SANDBOX_ENDPOINT = 'https://open.api.sandbox.ebay.com/shopping'
-    PRODUCTION_ENDPOINT = 'https://open.api.ebay.com/shopping'
+    self.endpoint = 'https://open.api.ebay.com/shopping'
 
     # @return [String]
     attr_reader :app_id
@@ -149,7 +146,6 @@ module Ebay
     private
 
     def request(operation, payload = {})
-      endpoint = sandbox? ? SANDBOX_ENDPOINT : PRODUCTION_ENDPOINT
       params = { 'appid' => app_id,
                  'callname' => operation,
                  'requestencoding' => 'JSON',
@@ -161,7 +157,7 @@ module Ebay
                  'trackingid' => tracking_id,
                  'trackingpartnercode' => tracking_partner_code }.compact
 
-      HTTP.post(endpoint, params: params, body: JSON.dump(payload))
+      http.post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end
