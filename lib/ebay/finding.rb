@@ -54,7 +54,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_completed_items(**payload)
+    def find_completed_items(payload = {})
       request('findCompletedItems', payload)
     end
 
@@ -62,7 +62,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_items_advanced(**payload)
+    def find_items_advanced(payload = {})
       request('findItemsAdvanced', payload)
     end
 
@@ -70,7 +70,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_items_by_category(**payload)
+    def find_items_by_category(payload = {})
       request('findItemsByCategory', payload)
     end
 
@@ -79,7 +79,7 @@ module Ebay
     # @param [String] keywords
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_items_by_keywords(keywords, **payload)
+    def find_items_by_keywords(keywords, payload = {})
       payload.update('keywords' => keywords)
       request('findItemsByKeywords', payload)
     end
@@ -90,7 +90,7 @@ module Ebay
     # @param [String] product_id_type
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_items_by_product(product_id, product_id_type, **payload)
+    def find_items_by_product(product_id, product_id_type, payload = {})
       payload.update('productId' => product_id,
                      'productId.@type' => product_id_type)
 
@@ -101,7 +101,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_items_in_ebay_stores(**payload)
+    def find_items_in_ebay_stores(payload = {})
       request('findItemsIneBayStores', payload)
     end
 

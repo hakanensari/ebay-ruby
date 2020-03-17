@@ -69,7 +69,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def find_products(**payload)
+    def find_products(payload = {})
       request('FindProducts', payload)
     end
 
@@ -78,7 +78,7 @@ module Ebay
     # @param [String] category_id
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_category_info(category_id, **payload)
+    def get_category_info(category_id, payload = {})
       payload.update('CategoryID' => category_id)
       request('GetCategoryInfo', payload)
     end
@@ -87,27 +87,32 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_ebay_time(**payload)
+    def get_ebay_time(payload = {})
       request('GeteBayTime', payload)
     end
 
     # Retrieves the current status of up to 20 eBay listings
     #
-    # @param [String] item_ids
-    # @param [Hash] payload
-    # @return [HTTP::Response]
-    def get_item_status(*item_ids, **payload)
+    # @overload get_item_status(*item_ids, payload = {})
+    #   @param [String] item_ids
+    #   @param [Hash] payload
+    #   @return [HTTP::Response]
+    def get_item_status(*item_ids)
+      payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
       payload.update('ItemID' => item_ids.join(','))
       request('GetItemStatus', payload)
     end
 
     # Retrieves publicly available data for one or more listings
     #
-    # @param [String] item_ids
-    # @param [Hash] payload
-    # @return [HTTP::Response]
-    def get_multiple_items(*item_ids, **payload)
+    # @overload get_multiple_items(*item_ids, payload = {})
+    #   @param [String] item_ids
+    #   @param [Hash] payload
+    #   @return [HTTP::Response]
+    def get_multiple_items(*item_ids)
+      payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
       payload.update('ItemID' => item_ids.join(','))
+
       request('GetMultipleItems', payload)
     end
 
@@ -116,7 +121,7 @@ module Ebay
     # @param [String] item_id
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_shipping_costs(item_id, **payload)
+    def get_shipping_costs(item_id, payload = {})
       payload.update('ItemID' => item_id)
       request('GetShippingCosts', payload)
     end
@@ -126,7 +131,7 @@ module Ebay
     # @param [String] item_id
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_single_item(item_id, **payload)
+    def get_single_item(item_id, payload = {})
       payload.update('ItemID' => item_id)
       request('GetSingleItem', payload)
     end
@@ -136,7 +141,7 @@ module Ebay
     # @param [String] user_id
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_user_profile(user_id, **payload)
+    def get_user_profile(user_id, payload = {})
       payload.update('UserID' => user_id)
       request('GetUserProfile', payload)
     end

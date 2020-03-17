@@ -47,7 +47,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_most_watched_items(**payload)
+    def get_most_watched_items(payload = {})
       request('getMostWatchedItems', payload)
     end
 
@@ -56,7 +56,7 @@ module Ebay
     #
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_related_category_items(**payload)
+    def get_related_category_items(payload = {})
       request('getRelatedCategoryItems', payload)
     end
 
@@ -65,7 +65,7 @@ module Ebay
     # @param [String] item_id
     # @param [Hash] payload
     # @return [HTTP::Response]
-    def get_similar_items(item_id, **payload)
+    def get_similar_items(item_id, payload = {})
       payload.update('itemId' => item_id)
       request('getSimilarItems', payload)
     end
