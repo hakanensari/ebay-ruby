@@ -133,12 +133,11 @@ module Ebay
       params = { 'GLOBAL-ID' => global_id,
                  'MESSAGE-ENCODING' => message_encoding,
                  'OPERATION-NAME' => operation,
-                 'REQUEST-DATA-FORMAT' => 'JSON',
                  'RESPONSE-DATA-FORMAT' => response_data_format,
                  'SECURITY-APPNAME' => security_appname,
-                 'SERVICE-VERSION' => service_version }.compact
+                 'SERVICE-VERSION' => service_version }.update(payload).compact
 
-      http.post(endpoint, params: params, body: JSON.dump(payload))
+      http.get(endpoint, params: params)
     end
   end
 end

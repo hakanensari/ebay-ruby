@@ -59,5 +59,14 @@ module Ebay
       response = @request.get_version
       assert response.status.ok?
     end
+
+    def test_params_with_dots
+      params = { 'paginationInput.entriesPerPage' => '1' }
+      response = @request.find_items_by_keywords('iphone', params)
+      data = JSON.parse(response)
+      count = data['findItemsByKeywordsResponse'].first['searchResult']
+                                                 .first['@count'].to_i
+      assert_equal 1, count
+    end
   end
 end
