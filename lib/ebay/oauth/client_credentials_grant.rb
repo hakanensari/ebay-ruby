@@ -37,7 +37,7 @@ module Ebay
       #
       # @return [HTTP::Response]
       def request
-        HTTP.basic_auth(user: app_id, pass: cert_id)
+        http.basic_auth(user: app_id, pass: cert_id)
             .post(endpoint, form: payload)
       end
 
