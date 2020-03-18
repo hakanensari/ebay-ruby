@@ -38,7 +38,7 @@ module Ebay
     # @param [String] security_appname
     # @param [String] service_version
     def initialize(global_id: nil, message_encoding: nil,
-                   response_data_format: 'JSON',
+                   response_data_format: nil,
                    security_appname: Config.app_id, service_version: nil)
       @global_id = global_id
       @message_encoding = message_encoding

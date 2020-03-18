@@ -39,7 +39,7 @@ The Finding API provides programmatic access to the next generation search capab
 ```ruby
 require 'ebay/finding'
 
-request = Ebay::Finding.new
+request = Ebay::Finding.new(response_data_format: 'JSON')
 response = request.find_items_by_keywords('iphone')
 
 JSON.parse(response)
@@ -56,7 +56,7 @@ The eBay Shopping API makes it easy to search for things on eBay.
 ```ruby
 require 'ebay/shopping'
 
-request = Ebay::Finding.new
+request = Ebay::Shopping.new(response_encoding: 'JSON')
 response = request.find_products('QueryKeywords' => 'tolkien')
 
 JSON.parse(response)
@@ -69,7 +69,7 @@ The Merchandising API provides item and product recommendations that can be used
 ```ruby
 require 'ebay/merchandising'
 
-request = Ebay::Finding.new
+request = Ebay::Merchandising.new(response_data_format: 'JSON')
 response = request.get_most_watched_items
 
 JSON.parse(response)

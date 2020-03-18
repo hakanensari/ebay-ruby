@@ -33,7 +33,7 @@ module Ebay
     # @param [String] response_data_format
     # @param [String] service_version
     def initialize(consumer_id: Config.app_id, global_id: nil,
-                   response_data_format: 'JSON', service_version: nil)
+                   response_data_format: nil, service_version: nil)
       @consumer_id = consumer_id
       @global_id = global_id
       @response_data_format = response_data_format

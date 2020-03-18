@@ -47,7 +47,7 @@ module Ebay
     # @param [String] tracking_id
     # @param [String] tracking_partner_code
     # @param [String] affiliate_user_id
-    def initialize(app_id: Config.app_id, response_encoding: 'JSON',
+    def initialize(app_id: Config.app_id, response_encoding: nil,
                    site_id: nil, version: '1119',
                    version_handling: nil, tracking_id: nil,
                    tracking_partner_code: nil, affiliate_user_id: nil)
