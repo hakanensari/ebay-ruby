@@ -17,13 +17,13 @@ module Ebay
     # @return [String]
     attr_reader :consumer_id
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :global_id
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :response_data_format
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :service_version
 
     # Returns a Finding API request instance

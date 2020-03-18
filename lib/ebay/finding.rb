@@ -14,19 +14,19 @@ module Ebay
 
     self.endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1'
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :global_id
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :message_encoding
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :response_data_format
 
     # @return [String]
     attr_reader :security_appname
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :service_version
 
     # Returns a Finding API request instance

@@ -16,25 +16,25 @@ module Ebay
     # @return [String]
     attr_reader :app_id
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :response_encoding
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :site_id
 
     # @return [String]
     attr_reader :version
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :version_handling
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :tracking_id
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :tracking_partner_code
 
-    # @return [String, nil]
+    # @return [String]
     attr_reader :affiliate_user_id
 
     # Returns a Finding API request instance
