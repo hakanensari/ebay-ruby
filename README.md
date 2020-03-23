@@ -23,7 +23,7 @@ request = Ebay::Browse.new(campaign_id: '123',
                            country: 'US',
                            zip: '19406',
                            access_token: access_token)
-response = @request.search(q: 'iphone')
+response = request.search(q: 'iphone')
 
 JSON.parse(response)
 ```
