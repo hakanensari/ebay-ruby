@@ -19,17 +19,26 @@ module Ebay
       # @return [String]
       attr_reader :cert_id
 
+      # Mints a new access token
+      #
       # @param [String] app_id
       # @param [String] cert_id
-      def initialize(app_id: Config.app_id, cert_id: Config.cert_id)
+      # @return [String]
+      def self.mint_access_token(app_id: Config.app_id, cert_id: Config.cert_id)
+        new(app_id: app_id, cert_id: cert_id).access_token
+      end
+
+      # @param [String] app_id
+      # @param [String] cert_id
+      def initialize(app_id:, cert_id:)
         @app_id = app_id
         @cert_id = cert_id
       end
 
-      # Mints a new access token
+      # Returns a new access token
       #
       # @return [String]
-      def mint_access_token
+      def access_token
         JSON.parse(request).fetch('access_token')
       end
 

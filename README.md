@@ -18,7 +18,6 @@ Using the Browse API, you can create a rich selection of items for your buyers t
 require 'ebay/browse'
 require 'ebay/oauth/client_credentials_grant'
 
-access_token = Oauth::ClientCredentialsGrant.new.mint_access_token
 request = Ebay::Browse.new(campaign_id: '123',
                            country: 'US',
                            zip: '19406',
@@ -58,6 +57,7 @@ require 'ebay/shopping'
 
 request = Ebay::Shopping.new(response_encoding: 'JSON')
 response = request.find_products('QueryKeywords' => 'tolkien')
+access_token = Oauth::ClientCredentialsGrant.mint_access_token
 
 JSON.parse(response)
 ```
