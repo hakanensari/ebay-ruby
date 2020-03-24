@@ -8,7 +8,7 @@ module Ebay
     yield Config
   end
 
-  # Stores credentials for accessing the eBay APIs
+  # Configures credentials for accessing the eBay APIs
   module Config
     class << self
       # @!attribute [rw] app_id

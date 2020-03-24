@@ -5,12 +5,12 @@ require 'ebay/requestable'
 
 # Ruby wrapper to the eBay APIs
 module Ebay
-  # The Finding API lets you search for and browse items listed on eBay and
   # Returns a {Ebay::Finding#initialize Finding API} instance
   def self.finding(**params)
     Finding.new(**params)
   end
 
+  # The Finding API lets you search and browse for items listed on eBay and
   # provides useful metadata to refine searches.
   #
   # @see https://developer.ebay.com/Devzone/finding/Concepts/MakingACall.html

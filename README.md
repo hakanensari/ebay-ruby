@@ -2,81 +2,114 @@
 
 [![Build](https://github.com/hakanensari/ebay-ruby/workflows/build/badge.svg)](https://github.com/hakanensari/ebay-ruby/actions)
 
-A Ruby wrapper to the [eBay APIs]
+This library provides a wrapper to the [eBay APIs].
 
-## Usage
+## Getting started
 
-### Buy APIs
-
-Retrieve purchasable items, check out, then track orders without visiting the eBay site.
-
-#### [Browse API]
-
-Using the Browse API, you can create a rich selection of items for your buyers to browse with keyword and category searches. You can also provides the ability to eBay members to add items and change the quantity of an item in their eBay shopping cart as well as view the contents of their eBay cart.
+You can instantiate API requests using shorthand class methods defined on `Ebay`.
 
 ```ruby
-require 'ebay/browse'
-require 'ebay/oauth/client_credentials_grant'
-
-request = Ebay::Browse.new(campaign_id: '123',
-                           country: 'US',
-                           zip: '19406',
-                           access_token: access_token)
-response = request.search(q: 'iphone')
-
-JSON.parse(response)
+Ebay.finding # returns a new Ebay::Finding instance
 ```
 
-### Traditional Searching APIs
+### Keys
 
-Search eBay; build search and browse experiences.
+eBay APIs require [developer keys].
 
-#### [Finding API]
+You can provide these globally with the environment variables `EBAY_APP_ID`, `EBAY_DEV_ID`, and `EBAY_CERT_ID`.
 
-The Finding API provides programmatic access to the next generation search capabilities on the eBay platform. It lets you search and browse for items listed on eBay and provides useful metadata to refine searches and enhance the search experience.
+If you prefer not to use environment variables, you can provide your keys globally with:
 
 ```ruby
-require 'ebay/finding'
+Ebay.configure do |config|
+  config.app_id = 'YOUR APP ID'
+  config.dev_id = 'YOUR DEV ID'
+  config.cert_id = 'YOUR CERT ID'
+end
+```
 
-request = Ebay::Finding.new(response_data_format: 'JSON')
+Finally, you can provide your keys individually to the request when instantiating it. This is what you will want to do if you are using multiple sets of credentials.
+
+Please note that each API names keys differently.
+
+```ruby
+request = Ebay.finding(security_appname: 'YOUR APP ID')
+```
+
+In the examples below, we will assume we are providing our keys with environment variables.
+
+### Parsing a response
+
+The eBay APIs return responses in XML or JSON format.
+
+You can override the default format of an API when instantiating the request.
+
+```ruby
+require 'json'
+
+# the Finding API returns XML by default
+request = Ebay.finding(response_data_format: 'JSON')
 response = request.find_items_by_keywords('iphone')
 
 JSON.parse(response)
 ```
 
-### Traditional Shopping/Buying APIs
+## Usage
 
-Retrieve public items and user data to create shopping and marketing applications.
+### [Browse API]
 
-#### [Shopping API]
+The Browse API allows your buyers to search eBay items by keyword and category. It also allows them to view and add items to their eBay shopping cart.
+
+```ruby
+require 'ebay/browse'
+require 'ebay/oauth/client_credentials_grant'
+
+access_token = Oauth::ClientCredentialsGrant.mint_access_token
+request = Ebay.browse(campaign_id: '123', country: 'US', zip: '19406',
+                      access_token: access_token)
+response = request.search(q: 'iphone')
+```
+
+### [Finding API]
+
+The Finding API lets you search and browse for items listed on eBay and provides useful metadata to refine searches.
+
+```ruby
+require 'ebay/finding'
+
+request = Ebay.finding
+response = request.find_items_by_keywords('iphone')
+```
+
+### [Merchandising API]
+
+The Merchandising API retrieves information about products or item listings on eBay to help you sell more merchandise to eBay buyers.
+
+```ruby
+require 'ebay/merchandising'
+
+request = Ebay::Merchandising.new
+response = request.get_most_watched_items
+```
+
+### [Shopping API]
 
 The eBay Shopping API makes it easy to search for things on eBay.
 
 ```ruby
 require 'ebay/shopping'
 
-request = Ebay::Shopping.new(response_encoding: 'JSON')
+request = Ebay::Shopping.new
 response = request.find_products('QueryKeywords' => 'tolkien')
-access_token = Oauth::ClientCredentialsGrant.mint_access_token
-
-JSON.parse(response)
 ```
 
-#### [Merchandising API]
+## Development
 
-The Merchandising API provides item and product recommendations that can be used to cross-sell and up-sell eBay items to buyers.
 
-```ruby
-require 'ebay/merchandising'
-
-request = Ebay::Merchandising.new(response_data_format: 'JSON')
-response = request.get_most_watched_items
-
-JSON.parse(response)
-```
 
 [eBay APIs]: https://developer.ebay.com/docs
+[developer keys]: https://developer.ebay.com/my/keys
 [Browse API]: https://developer.ebay.com/api-docs/buy/browse/static/overview.html
 [Finding API]: https://developer.ebay.com/Devzone/finding/Concepts/FindingAPIGuide.html
-[Shopping API]: https://developer.ebay.com/Devzone/shopping/docs/Concepts/ShoppingAPIGuide.html
 [Merchandising API]: https://developer.ebay.com/Devzone/merchandising/docs/Concepts/merchandisingAPIGuide.html
+[Shopping API]: https://developer.ebay.com/Devzone/shopping/docs/Concepts/ShoppingAPIGuide.html
