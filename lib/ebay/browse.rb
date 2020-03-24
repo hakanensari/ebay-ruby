@@ -5,11 +5,17 @@ require 'base64'
 require 'ebay/config'
 require 'ebay/requestable'
 
+# Ruby wrapper to the eBay APIs
 module Ebay
   # Using the Browse API, you can create a rich selection of items for your
   # buyers to browse with keyword and category searches. It also provides the
   # ability to eBay members to add items and change the quantity of an item in
   # their eBay shopping cart as well as view the contents of their eBay cart.
+  # Returns a {Ebay::Browse#initialize Browse API} instance
+  def self.browse(**params)
+    Browse.new(**params)
+  end
+
   #
   # @see https://developer.ebay.com/api-docs/buy/browse/overview.html
   class Browse

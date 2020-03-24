@@ -7,7 +7,7 @@ module Ebay
   class TestFinding < Minitest::Test
     def setup
       VCR.insert_cassette('finding')
-      @request = Ebay::Finding.new(response_data_format: 'JSON').sandbox
+      @request = Ebay.finding(response_data_format: 'JSON').sandbox
     end
 
     def teardown

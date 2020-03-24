@@ -7,7 +7,7 @@ module Ebay
   class TestShopping < Minitest::Test
     def setup
       VCR.insert_cassette('shopping', record: :new_episodes)
-      @request = Ebay::Shopping.new(response_encoding: 'JSON').sandbox
+      @request = Ebay.shopping(response_encoding: 'JSON').sandbox
     end
 
     def teardown

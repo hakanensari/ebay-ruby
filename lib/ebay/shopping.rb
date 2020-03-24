@@ -3,7 +3,13 @@
 require 'ebay/config'
 require 'ebay/requestable'
 
+# Ruby wrapper to the eBay APIs
 module Ebay
+  # Returns a {Ebay::Shopping#initialize Shopping API} instance
+  def self.shopping(**params)
+    Shopping.new(**params)
+  end
+
   # The eBay Shopping API makes it easy to search for things on eBay.
   #
   # @see https://developer.ebay.com/Devzone/shopping/docs/Concepts/ShoppingAPI_FormatOverview.html

@@ -3,7 +3,13 @@
 require 'ebay/config'
 require 'ebay/requestable'
 
+# Ruby wrapper to the eBay APIs
 module Ebay
+  # Returns a {Ebay::Merchandising#initialize Merchandising API} instance
+  def self.merchandising(**params)
+    Merchandising.new(**params)
+  end
+
   # Retrieves information about products or item listings on eBay to help you
   # sell more merchandise to eBay buyers
   #
