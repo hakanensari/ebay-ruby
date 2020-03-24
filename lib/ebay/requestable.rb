@@ -37,5 +37,33 @@ module Ebay
       @endpoint = endpoint.sub('ebay', 'sandbox.ebay')
       self
     end
+
+    # Flags request as persistent
+    #
+    # @param [Integer] timeout
+    # @return [self]
+    def persistent(timeout: 5)
+      self.http = http.persistent(endpoint, timeout: timeout)
+      self
+    end
+
+    # @!method use(*features)
+    #   Turns on {https://github.com/httprb/http HTTP} features
+    #
+    #   @param features
+    #   @return [self]
+    #
+    # @!method via(*proxy)
+    #   Makes a request through an HTTP proxy
+    #
+    #   @param [Array] proxy
+    #   @raise [HTTP::Request::Error] if HTTP proxy is invalid
+    #   @return [self]
+    %i[timeout via through headers use].each do |method_name|
+      define_method(method_name) do |*args, &block|
+        self.http = http.send(method_name, *args, &block)
+        self
+      end
+    end
   end
 end
