@@ -11,7 +11,7 @@ module Ebay
 
       # Some calls work only in the production environment, so I'm not running
       # the tests in the sandbox environment
-      access_token = Oauth::ClientCredentialsGrant.mint_access_token
+      access_token = Oauth::ClientCredentialsGrant.new.mint_access_token
       @request = Ebay.browse(campaign_id: '123', country: 'US', zip: '19406',
                              access_token: access_token)
     end

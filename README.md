@@ -64,7 +64,7 @@ The Browse API allows your buyers to search eBay items by keyword and category. 
 require 'ebay/browse'
 require 'ebay/oauth/client_credentials_grant'
 
-access_token = Oauth::ClientCredentialsGrant.mint_access_token
+access_token = Oauth::ClientCredentialsGrant.new.mint_access_token
 request = Ebay.browse(campaign_id: '123', country: 'US', zip: '19406',
                       access_token: access_token)
 response = request.search(q: 'iphone')
