@@ -4,4 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix #get_multiple_items and #get_item_status in Shopping
+
 [Unreleased]: https://github.com/hakanensari/ebay-ruby/compare/v0.3.3...HEAD
