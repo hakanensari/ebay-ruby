@@ -102,7 +102,7 @@ module Ebay
     #   @return [HTTP::Response]
     def get_item_status(*item_ids)
       payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
-      payload = payload.merge('ItemID' => item_ids.join(','))
+      payload = payload.merge('ItemID' => item_ids)
       request('GetItemStatus', payload)
     end
 
@@ -114,7 +114,7 @@ module Ebay
     #   @return [HTTP::Response]
     def get_multiple_items(*item_ids)
       payload = item_ids.last.is_a?(Hash) ? item_ids.pop : {}
-      payload = payload.merge('ItemID' => item_ids.join(','))
+      payload = payload.merge('ItemID' => item_ids)
 
       request('GetMultipleItems', payload)
     end
