@@ -53,102 +53,6 @@ http_interactions:
   recorded_at: Mon, 16 Mar 2020 15:13:09 GMT
 - request:
     method: post
-    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetItemStatus&requestencoding=JSON&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: '{"ItemID":"333112555211"}'
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '358'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Mon, 16 Mar 2020 15:13:10 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dGlsZHw3Mig/NDMyNjIsNDYpNDcoNjQ0KDUwMjw/Mz02
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '16'
-      X-Ebay-Pop-Id:
-      - UFES2-RNOAZ03-openapi
-      Date:
-      - Mon, 16 Mar 2020 15:13:09 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Ack":"Failure","Errors":[{"ShortMessage":"Input data is invalid.","LongMessage":"Input
-        data for the given tag is invalid or missing. Please check API documentation.","ErrorCode":"1.22","SeverityCode":"Error","ErrorParameters":[{"Value":"ItemID","ParamID":"0"}],"ErrorClassification":"RequestError"}],"Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
-    http_version: null
-  recorded_at: Mon, 16 Mar 2020 15:13:10 GMT
-- request:
-    method: post
-    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetMultipleItems&requestencoding=JSON&responseencoding=JSON&version=1119
-    body:
-      encoding: UTF-8
-      string: '{"ItemID":"333112555211,322539683928"}'
-    headers:
-      Connection:
-      - close
-      Host:
-      - open.api.sandbox.ebay.com
-      User-Agent:
-      - http.rb/4.3.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Length:
-      - '358'
-      Expires:
-      - Sat, 25 Dec 1999 00:00:00 GMT
-      Last-Modified:
-      - Mon, 16 Mar 2020 15:13:10 GMT
-      X-Ebay-Api-Build-Tag:
-      - E1139_CORE_APILW_19143404_R1
-      X-Ebay-Api-Pool-Name:
-      - ___cDRidW9rdGZpdWY=
-      X-Ebay-Api-Server-Name:
-      - ___dWtgNTEqMjcyPzE1MCgyNSg2NjMoNTI8KDI2Pz43OzU=
-      Content-Type:
-      - text/plain;charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '7'
-      X-Ebay-Pop-Id:
-      - UFES2-SLCAZ01-openapi
-      Date:
-      - Mon, 16 Mar 2020 15:13:10 GMT
-      Server:
-      - ebay-proxy-server
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"Ack":"Failure","Errors":[{"ShortMessage":"Input data is invalid.","LongMessage":"Input
-        data for the given tag is invalid or missing. Please check API documentation.","ErrorCode":"1.22","SeverityCode":"Error","ErrorParameters":[{"Value":"ItemID","ParamID":"0"}],"ErrorClassification":"RequestError"}],"Build":"E1139_CORE_APILW_19143404_R1","Version":"1139"}'
-    http_version: null
-  recorded_at: Mon, 16 Mar 2020 15:13:10 GMT
-- request:
-    method: post
     uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GeteBayTime&requestencoding=JSON&responseencoding=JSON&version=1119
     body:
       encoding: UTF-8
@@ -386,4 +290,113 @@ http_interactions:
         Priority Shipping","ShippingServiceCost":{"Value":17.15,"CurrencyID":"USD"},"ShippingType":"Calculated","InsuranceOption":"NotOffered","ListedShippingServiceCost":{"Value":17.150000000000002,"CurrencyID":"USD"},"ImportCharge":{"Value":0.0,"CurrencyID":"USD"}}}'
     http_version: null
   recorded_at: Mon, 16 Mar 2020 15:13:14 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetItemStatus&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"ItemID":["291914595965"]}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '308'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Tue, 19 May 2020 17:20:32 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1141_CORE_APILW_19170841_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdGZpdWY=
+      X-Ebay-Api-Server-Name:
+      - ___anFwZHw3Mig/PjczPzAsNDYpMjw/KTc3KDU3Pz43OzU=
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '99'
+      X-Ebay-Pop-Id:
+      - UFES2-LVSAZ01-openapi
+      Date:
+      - Tue, 19 May 2020 17:20:31 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-05-19T17:20:32.001Z","Ack":"Success","Build":"E1141_CORE_APILW_19170841_R1","Version":"1141","Item":[{"ItemID":"291914595965","EndTime":"2020-06-18T04:15:58.000Z","BidCount":0,"ConvertedCurrentPrice":{"Value":4.67,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT10H55M26S"}]}'
+    http_version: null
+  recorded_at: Tue, 19 May 2020 17:20:32 GMT
+- request:
+    method: post
+    uri: https://open.api.sandbox.ebay.com/shopping?appid=APP_ID&callname=GetMultipleItems&requestencoding=JSON&responseencoding=JSON&version=1119
+    body:
+      encoding: UTF-8
+      string: '{"ItemID":["291914595965","141963466041"]}'
+    headers:
+      Connection:
+      - close
+      Host:
+      - open.api.sandbox.ebay.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '2836'
+      Expires:
+      - Sat, 25 Dec 1999 00:00:00 GMT
+      Last-Modified:
+      - Tue, 19 May 2020 17:20:32 GMT
+      X-Ebay-Api-Build-Tag:
+      - E1141_CORE_APILW_19170841_R1
+      X-Ebay-Api-Pool-Name:
+      - ___cDRidW9rdGZpdWY=
+      X-Ebay-Api-Server-Name:
+      - ___anFwNTQqMDw1Mjc1NCgyNSgwNSs3PjcrPz85PTY/Mw==
+      Content-Type:
+      - text/plain;charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '154'
+      X-Ebay-Pop-Id:
+      - UFES2-LVSAZ01-openapi
+      Date:
+      - Tue, 19 May 2020 17:20:32 GMT
+      Server:
+      - ebay-proxy-server
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"Timestamp":"2020-05-19T17:20:32.705Z","Ack":"Success","Build":"E1141_CORE_APILW_19170841_R1","Version":"1141","Item":[{"ItemID":"291914595965","EndTime":"2020-06-18T04:15:58.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/Harry-Potter-and-cursed-child-parts-one-and-two-J-K-Rowling-Hardback-/291914595965","ListingType":"FixedPriceItem","Location":"England","GalleryURL":"https://thumbs2.ebaystatic.com/pict/2919145959658080_7.jpg","PictureURL":["https://i.ebayimg.com/00/s/NjM0WDQwMA==/z/EdIAAOSwYxBeV-dY/$_12.JPG?set_id=880000500F","https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/NqwAAOSwekpeV-Q4/$_12.JPG?set_id=880000500F"],"PrimaryCategoryID":"171219","PrimaryCategoryName":"Books,
+        Comics & Magazines:Children''s & Young Adults:Fiction","BidCount":0,"ConvertedCurrentPrice":{"Value":4.67,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT10H55M26S","Title":"Harry
+        Potter and the cursed child: parts one and two by J.K. Rowling (Hardback)","HitCount":14213,"Country":"GB","AutoPay":true,"ConditionID":5000,"ConditionDisplayName":"Good","QuantityAvailableHint":"MoreThan","QuantityThreshold":10,"ConditionDescription":"This
+        product has passed our meticulous quality checks and is guaranteed to be in
+        good condition. With over 7 million ratings, you can buy from us with confidence.\nGood
+        Condition: A book that has been read, but is in good condition. Minimal damage
+        to the book cover eg. scuff marks, but no holes or tears. If this is a hard
+        cover, the dust jacket may be missing. Binding has minimal wear. The majority
+        of pages are undamaged with some creasing or tearing, and pencil underlining
+        of text, but this is minimal. No highlighting of text, no writing in the margins,
+        and no missing pages. Don\u2019t worry, it\u2019s still perfectly readable
+        and our expert team have made sure there is no major damage \u2013 you\u2019re
+        getting a great book for a great price!"},{"ItemID":"141963466041","EndTime":"2020-06-18T10:35:54.000Z","ViewItemURLForNaturalSearch":"https://www.ebay.com/itm/Harry-Potter-and-Goblet-Fire-Book-4-Rowling-J-K-Paperback-Book-/141963466041","ListingType":"FixedPriceItem","Location":"GB","GalleryURL":"https://thumbs2.ebaystatic.com/pict/1419634660418080_99.jpg","PictureURL":["https://i.ebayimg.com/00/s/NTAwWDMxNw==/z/-NkAAOSwweZevpFj/$_1.JPG?set_id=8800005007","https://i.ebayimg.com/00/s/MTYwMFg3NjA=/z/OmcAAOSwO7devpFk/$_1.JPG?set_id=880000500F"],"PrimaryCategoryID":"171219","PrimaryCategoryName":"Books,
+        Comics & Magazines:Children''s & Young Adults:Fiction","BidCount":0,"ConvertedCurrentPrice":{"Value":6.69,"CurrencyID":"USD"},"ListingStatus":"Active","TimeLeft":"P29DT17H15M22S","Title":"Harry
+        Potter and the Goblet of Fire (Book 4) by Rowling, J. K. Paperback Book","HitCount":13919,"Country":"GB","AutoPay":true,"ConditionID":4000,"ConditionDisplayName":"Very
+        Good"}]}'
+    http_version: null
+  recorded_at: Tue, 19 May 2020 17:20:32 GMT
 recorded_with: VCR 5.1.0
