@@ -105,7 +105,13 @@ response = request.find_products('QueryKeywords' => 'tolkien')
 
 ## Development
 
+To write requests and responses to a logger, use the logging feature:
 
+```ruby
+require 'logger'
+
+request = request.use(logging: {logger: Logger.new(STDOUT)})
+```
 
 [eBay APIs]: https://developer.ebay.com/docs
 [developer keys]: https://developer.ebay.com/my/keys
