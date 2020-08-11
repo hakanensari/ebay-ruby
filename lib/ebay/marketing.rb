@@ -8,15 +8,15 @@ require 'ebay/requestable'
 # Ruby wrapper to the eBay APIs
 module Ebay
   # Returns a {Ebay::Browse#initialize Browse API} instance
-  def self.browse(**params)
-    Browse.new(**params)
+  def self.marketing(**params)
+    Marketing.new(**params)
   end
 
-  # The Browse API allows your buyers to search eBay items by keyword and category. It also allows them to view and add
-  # items to their eBay shopping cart.
+  # The Marketing API retrieves eBay products based on a metric, such as Best Selling, as well as products that were
+  # also bought and also viewed.
   #
-  # @see https://developer.ebay.com/api-docs/buy/browse/overview.html
-  class Browse
+  # @see https://developer.ebay.com/api-docs/buy/marketing/overview.html
+  class Marketing
     include Requestable
 
     self.endpoint = 'https://api.ebay.com/buy/browse/v1'
@@ -43,7 +43,8 @@ module Ebay
     # @param [String] campaign_id
     # @param [String] reference_id
     # @param [String] access_token
-    def initialize(campaign_id:, reference_id: nil, country: nil, zip: nil, access_token: nil)
+    def initialize(campaign_id:, reference_id: nil, country: nil, zip: nil,
+                   access_token: nil)
       @campaign_id = campaign_id
       @reference_id = reference_id
       @country = country
@@ -51,7 +52,8 @@ module Ebay
       @access_token = access_token
     end
 
-    # Searches for eBay items by various query parameters and retrieves summaries of the item
+    # Searches for eBay items by various query parameters and retrieves
+    # summaries of the item
     #
     # @param [Hash] params
     # @return [HTTP::Response]
@@ -59,6 +61,8 @@ module Ebay
       url = build_url('item_summary', 'search')
       http.headers(build_headers).get(url, params: params)
     end
+
+    # To test the getMerchandisedProducts method in Sandbox, you must use category ID 9355 and the response will be mock
 
     # Searches for eBay items based on a image and retrieves their summaries
     #
@@ -117,7 +121,8 @@ module Ebay
     def check_compatibility(item_id, marketplace_id, compatibility_properties)
       url = build_url('item', item_id, 'check_compatibility')
       headers = build_headers
-      headers.update('X-EBAY-C-MARKETPLACE-ID' => marketplace_id, 'CONTENT-TYPE' => 'application/json')
+      headers.update('X-EBAY-C-MARKETPLACE-ID' => marketplace_id,
+                     'CONTENT-TYPE' => 'application/json')
       body = JSON.dump('compatibilityProperties' => compatibility_properties)
 
       http.headers(headers).post(url, body: body)
@@ -153,11 +158,14 @@ module Ebay
     def build_ebay_enduser_context
       { 'affiliateCampaignId' => campaign_id,
         'affiliateReferenceId' => reference_id,
-        'contextualLocation' => build_contextual_location }.compact.map { |kv| kv.join('=') }.join(',')
+        'contextualLocation' => build_contextual_location }
+        .compact.map { |kv| kv.join('=') }.join(',')
     end
 
     def build_contextual_location
-      string = { 'country' => country, 'zip' => zip }.compact.map { |kv| kv.join('=') }.join(',')
+      string = { 'country' => country, 'zip' => zip }
+               .compact.map { |kv| kv.join('=') }.join(',')
+
       CGI.escape(string) if string
     end
   end
