@@ -59,7 +59,7 @@ JSON.parse(response)
 
 The Browse API allows your buyers to search eBay items by keyword and category. It also allows them to view and add items to their eBay shopping cart. The Browse API defaults to the eBay US marketplace but may be set during initialisation. The list of available marketplaces is [here](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl).
 
-**Note** The marketplace value needs to use an underscore between EBAY and the country code.  The Other APIs use a hyphen.
+**Note** The marketplace value needs to use an underscore between EBAY and the country code.  The Finding and Merchandising APIs use a hyphen.
 
 ```ruby
 require 'ebay/browse'
@@ -107,7 +107,7 @@ response = request.find_products('QueryKeywords' => 'tolkien')
 ### Market Place
 eBay has country bsaed marketplaces ( listed [here](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl) ).  By default, the eBay gem queries the US Marketplace.  To change the marketplace, set the marketplace on the request object.
 
-**Note** For the Browse API, the marketplace value needs to use an underscore between EBAY and the country code (EBAY_AU).  The other APIs require a hyphen between EBAY and the country code ( EBAY-AU )
+**Note** For the Browse API, the marketplace value needs to use an underscore between EBAY and the country code (EBAY_AU).  The Finding and Merchandising APIs require a hyphen between EBAY and the country code ( EBAY-AU )
 
 ## Development
 
