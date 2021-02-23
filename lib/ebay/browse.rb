@@ -34,6 +34,9 @@ module Ebay
     # @return [String,nil]
     attr_reader :zip
 
+    # @return [String,nil]
+    attr_reader :market_id
+
     # @return [String] the application access token
     def access_token
       @access_token ||= mint_access_token
@@ -45,12 +48,13 @@ module Ebay
     # @param [String] reference_id
     # @param [String] access_token
     def initialize(campaign_id:, reference_id: nil, country: nil, zip: nil,
-                   access_token: nil)
+                   access_token: nil, market_id: 'EBAY_US')
       @campaign_id = campaign_id
       @reference_id = reference_id
       @country = country
       @zip = zip
       @access_token = access_token
+      @market_id = market_id
     end
 
     # Searches for eBay items by various query parameters and retrieves
@@ -151,6 +155,7 @@ module Ebay
 
     def build_headers
       { 'AUTHORIZATION' => "Bearer #{access_token}",
+        'X-EBAY-C-MARKETPLACE-ID' => market_id,
         'X-EBAY-C-ENDUSERCTX' => build_ebay_enduser_context }
     end
 
