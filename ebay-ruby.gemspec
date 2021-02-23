@@ -19,8 +19,10 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'redcarpet'
   gem.add_development_dependency 'rubocop'
+  gem.add_development_dependency 'rubocop-minitest'
+  gem.add_development_dependency 'rubocop-rake'
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'yard'
-  gem.required_ruby_version = '>= 2.4'
+  gem.required_ruby_version = '>= 2.5'
 end

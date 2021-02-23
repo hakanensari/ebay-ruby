@@ -7,7 +7,7 @@ require 'ebay/oauth/client_credentials_grant'
 module Ebay
   class TestBrowse < Minitest::Test
     def setup
-      VCR.insert_cassette('browse', record: :new_episodes)
+      VCR.insert_cassette('browse')
 
       # Some calls work only in the production environment, so I'm not running
       # the tests in the sandbox environment
