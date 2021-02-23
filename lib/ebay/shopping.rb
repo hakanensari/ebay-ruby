@@ -163,7 +163,7 @@ module Ebay
                  'trackingid' => tracking_id,
                  'trackingpartnercode' => tracking_partner_code }.compact
 
-      http.post(endpoint, params: params, body: JSON.dump(payload))
+      http.headers(headers).post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end
