@@ -90,7 +90,7 @@ module Ebay
                  'RESPONSE-DATA-FORMAT' => response_data_format,
                  'SERVICE-VERSION' => service_version }.compact
 
-      http.post(endpoint, params: params, body: JSON.dump(payload))
+      http.headers(headers).post(endpoint, params: params, body: JSON.dump(payload))
     end
   end
 end

@@ -143,7 +143,7 @@ module Ebay
                  'SECURITY-APPNAME' => security_appname,
                  'SERVICE-VERSION' => service_version }.update(payload).compact
 
-      http.get(endpoint, params: params)
+      http.headers(headers).get(endpoint, params: params)
     end
   end
 end
