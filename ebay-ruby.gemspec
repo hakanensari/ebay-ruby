@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
 
   gem.files = Dir.glob('lib/**/*') + %w[LICENSE README.md]
 
-  gem.add_dependency 'http', '~> 4.0'
+  gem.add_dependency 'http', '>= 4.0', '< 6.0'
   gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'redcarpet'
