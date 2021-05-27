@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2021-05-27
+
 - Relax version requirement on the HTTP gem
 
 ## [0.3.5] - 2021-03-18
@@ -22,6 +24,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fix #get_multiple_items and #get_item_status in Shopping
 
-[Unreleased]: https://github.com/hakanensari/ebay-ruby/compare/v0.3.5...HEAD
+[Unreleased]: https://github.com/hakanensari/ebay-ruby/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/hakanensari/peddler/compare/v0.3.5...v0.4.0
 [0.3.5]: https://github.com/hakanensari/peddler/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/hakanensari/peddler/compare/v0.3.3...v0.3.4
