@@ -22,6 +22,9 @@ module Ebay
     self.endpoint = 'https://api.ebay.com/buy/browse/v1'
 
     # @return [String]
+    attr_reader :access_token
+
+    # @return [String]
     attr_reader :campaign_id
 
     # @return [String,nil]
@@ -36,17 +39,15 @@ module Ebay
     # @return [String,nil]
     attr_reader :market_id
 
-    # @return [String] the application access token
-    def access_token
-      @access_token ||= mint_access_token
-    end
-
     # Returns a Browse API request instance
     #
+    # @param [String] access_token
     # @param [String] campaign_id
     # @param [String] reference_id
-    # @param [String] access_token
-    def initialize(campaign_id:, reference_id: nil, country: nil, zip: nil, access_token: nil, market_id: 'EBAY_US')
+    # @param [String] country
+    # @param [String] zip
+    # @param [String] market_id
+    def initialize(access_token:, campaign_id:, reference_id: nil, country: nil, zip: nil, market_id: 'EBAY_US')
       @campaign_id = campaign_id
       @reference_id = reference_id
       @country = country

@@ -4,7 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Remove call to missing method
+
 ## [0.4.0] - 2021-05-27
+
+### Changed
 
 - Relax version requirement on the HTTP gem
 
