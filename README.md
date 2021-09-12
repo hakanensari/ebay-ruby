@@ -57,7 +57,7 @@ JSON.parse(response)
 ## Usage
 ### [Browse API]
 
-The Browse API allows your buyers to search eBay items by keyword and category. It also allows them to view and add items to their eBay shopping cart. The Browse API defaults to the eBay US marketplace but may be set during initialisation. The list of available marketplaces is [here](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl).
+The Browse API allows your buyers to search eBay items by keyword and [category](https://pages.ebay.com/sellerinformation/news/categorychanges/preview2021.html). It also allows them to view and add items to their eBay shopping cart. The Browse API defaults to the eBay US marketplace but may be set during initialisation. The list of available marketplaces is [here](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl).
 
 **Note** The marketplace value needs to use an underscore between EBAY and the country code.  The Finding and Merchandising APIs use a hyphen.
 
