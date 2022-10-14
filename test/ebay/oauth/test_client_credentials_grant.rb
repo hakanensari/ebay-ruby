@@ -17,7 +17,7 @@ module Ebay
 
       def test_request
         response = @grant.request
-        assert response.status.ok?
+        assert_predicate response.status, :ok?
       end
 
       def test_mint_access_token

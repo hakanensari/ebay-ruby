@@ -58,7 +58,7 @@ module Ebay
     private
 
     def assert_success(response)
-      assert response.status.ok?
+      assert_predicate response.status, :ok?
       assert_equal 'Success', JSON.parse(response.body)['Ack']
     end
   end

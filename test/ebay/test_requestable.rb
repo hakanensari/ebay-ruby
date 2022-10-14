@@ -29,7 +29,7 @@ module Ebay
 
     def test_persistence
       @request.persistent
-      assert @request.http.persistent?
+      assert_predicate @request.http, :persistent?
     end
 
     def test_logging
