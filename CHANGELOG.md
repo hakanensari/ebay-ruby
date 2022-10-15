@@ -3,7 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Removed
 
+- Remove Ruby 2.6 support
+### Fixed
+
+- Handle OAuth grant errors properly
 ## [0.4.1] - 2021-09-07
 
 ### Fixed
