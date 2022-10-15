@@ -5,6 +5,8 @@ require 'ebay/requestable'
 
 module Ebay
   module Oauth
+    class Error < StandardError; end
+
     # Mints an access token to use in API requests
     #
     # @see https://developer.ebay.com/api-docs/static/oauth-client-credentials-grant.html
@@ -28,9 +30,13 @@ module Ebay
 
       # Mints a new access token
       #
+      # @raise [Ebay::Oauth::Error] if the request fails
       # @return [String]
       def mint_access_token
-        JSON.parse(request).fetch('access_token')
+        response = request
+        raise Error, response.status.reason unless response.status.ok?
+
+        JSON.parse(response).fetch('access_token')
       end
 
       # Requests a client credentials grant
