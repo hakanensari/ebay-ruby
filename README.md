@@ -66,8 +66,7 @@ require 'ebay/browse'
 require 'ebay/oauth/client_credentials_grant'
 
 access_token = Oauth::ClientCredentialsGrant.new.mint_access_token
-request = Ebay.browse(campaign_id: '123', country: 'US', zip: '19406',
-                      access_token: access_token, market_id: 'EBAY_US')
+request = Ebay.browse(access_token: access_token, campaign_id: '123')
 response = request.search(q: 'iphone')
 ```
 
@@ -104,12 +103,23 @@ request = Ebay::Shopping.new
 response = request.find_products('QueryKeywords' => 'tolkien')
 ```
 
-### Market Place
+### Marketplace
 eBay has country bsaed marketplaces ( listed [here](https://developer.ebay.com/api-docs/static/rest-request-components.html#marketpl) ).  By default, the eBay gem queries the US Marketplace.  To change the marketplace, set the marketplace on the request object.
 
 **Note** For the Browse API, the marketplace value needs to use an underscore between EBAY and the country code (EBAY_AU).  The Finding and Merchandising APIs require a hyphen between EBAY and the country code ( EBAY-AU )
 
 ## Development
+
+You can point to the sandbox environment instead of production when developing.
+
+```ruby
+require 'ebay/browse'
+require 'ebay/oauth/client_credentials_grant'
+
+access_token = Oauth::ClientCredentialsGrant.new.sandbox.mint_access_token
+request = Ebay.browse(access_token: access_token, campaign_id: '123').sandbox
+response = request.search(q: 'iphone')
+```
 
 To write requests and responses to a logger, use the logging feature:
 
