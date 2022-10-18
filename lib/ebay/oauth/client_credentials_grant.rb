@@ -13,6 +13,8 @@ module Ebay
     class ClientCredentialsGrant
       include Requestable
 
+      VIEW_PUBLIC_DATA_SCOPE = 'https://api.ebay.com/oauth/api_scope'
+
       self.endpoint = 'https://api.ebay.com/identity/v1/oauth2/token'
 
       # @return [String]
@@ -21,11 +23,16 @@ module Ebay
       # @return [String]
       attr_reader :cert_id
 
+      # @return [Array]
+      attr_reader :scopes
+
       # @param [String] app_id
       # @param [String] cert_id
-      def initialize(app_id: Config.app_id, cert_id: Config.cert_id)
+      # @param [Array] scopes
+      def initialize(app_id: Config.app_id, cert_id: Config.cert_id, scopes: [VIEW_PUBLIC_DATA_SCOPE])
         @app_id = app_id
         @cert_id = cert_id
+        @scopes = scopes
       end
 
       # Mints a new access token
@@ -51,7 +58,7 @@ module Ebay
 
       def payload
         { grant_type: 'client_credentials',
-          scope: 'https://api.ebay.com/oauth/api_scope' }
+          scope: scopes.join(' ') }
       end
     end
   end
