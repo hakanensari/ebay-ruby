@@ -7,12 +7,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - Make OAuth scopes configurable
+
+### Changed
+
+- Bump/relax version guard for the HTTP gem
+
 ### Removed
 
-- Remove Ruby 2.6 support
+- Remove EOL Rubies up to 3.2
+
 ### Fixed
 
 - Handle OAuth grant errors properly
+
 ## [0.4.1] - 2021-09-07
 
 ### Fixed

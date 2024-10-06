@@ -2,7 +2,6 @@ Metrics/MethodLength:
   Max: 12
 Metrics/ParameterLists:
   Max: 8
-
 Naming/AccessorMethodName:
   Enabled: false
 Naming/FileName:

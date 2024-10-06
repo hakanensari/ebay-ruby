@@ -4,6 +4,9 @@ require:
   - rubocop-minitest
   - rubocop-rake
 
+inherit_gem:
+  rubocop-shopify: rubocop.yml
+
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.2

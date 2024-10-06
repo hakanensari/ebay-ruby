@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'http'
+require "http"
 
 module Ebay
   # Adds an HTTP client and ability to switch to the eBay Sandbox environment
@@ -27,7 +27,7 @@ module Ebay
     # @param [String]
     def market_id=(market_id)
       @headers ||= {}
-      @headers['X-EBAY-SOA-GLOBAL-ID'] = market_id
+      @headers["X-EBAY-SOA-GLOBAL-ID"] = market_id
     end
 
     # @!attribute [r] http
@@ -46,7 +46,7 @@ module Ebay
     #
     # @return [self]
     def sandbox
-      @endpoint = endpoint.sub('ebay', 'sandbox.ebay')
+      @endpoint = endpoint.sub("ebay", "sandbox.ebay")
       self
     end
 
@@ -71,7 +71,7 @@ module Ebay
     #   @param [Array] proxy
     #   @raise [HTTP::Request::Error] if HTTP proxy is invalid
     #   @return [self]
-    %i[timeout via through use].each do |method_name|
+    [:timeout, :via, :through, :use].each do |method_name|
       define_method(method_name) do |*args, &block|
         self.http = http.send(method_name, *args, &block)
         self

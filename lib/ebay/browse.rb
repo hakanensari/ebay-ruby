@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
-require 'base64'
+require "base64"
 
-require 'ebay/config'
-require 'ebay/requestable'
+require "ebay/config"
+require "ebay/requestable"
 
 # Ruby wrapper to the eBay APIs
 module Ebay
-  # Returns a {Ebay::Browse#initialize Browse API} instance
-  def self.browse(**params)
-    Browse.new(**params)
+  class << self
+    # Returns a {Ebay::Browse#initialize Browse API} instance
+    def browse(**params)
+      Browse.new(**params)
+    end
   end
 
   # The Browse API allows your buyers to search eBay items by keyword and category. It also allows them to view and add
@@ -19,7 +21,7 @@ module Ebay
   class Browse
     include Requestable
 
-    self.endpoint = 'https://api.ebay.com/buy/browse/v1'
+    self.endpoint = "https://api.ebay.com/buy/browse/v1"
 
     # @return [String]
     attr_reader :access_token
@@ -47,7 +49,7 @@ module Ebay
     # @param [String] country
     # @param [String] zip
     # @param [String] market_id
-    def initialize(access_token:, campaign_id:, reference_id: nil, country: nil, zip: nil, market_id: 'EBAY_US')
+    def initialize(access_token:, campaign_id:, reference_id: nil, country: nil, zip: nil, market_id: "EBAY_US")
       @campaign_id = campaign_id
       @reference_id = reference_id
       @country = country
@@ -61,7 +63,7 @@ module Ebay
     # @param [Hash] params
     # @return [HTTP::Response]
     def search(params = {})
-      url = build_url('item_summary', 'search')
+      url = build_url("item_summary", "search")
       http.headers(build_headers).get(url, params: params)
     end
 
@@ -71,8 +73,8 @@ module Ebay
     # @param [Hash] params
     # @return [HTTP::Response]
     def search_by_image(image, params = {})
-      url = build_url('item_summary', 'search_by_image')
-      headers = build_headers.update('CONTENT-TYPE' => 'application/json')
+      url = build_url("item_summary", "search_by_image")
+      headers = build_headers.update("CONTENT-TYPE" => "application/json")
       encoded_string = Base64.encode64(image.read)
       body = JSON.dump(image: encoded_string)
 
@@ -85,7 +87,7 @@ module Ebay
     # @param [Hash] params
     # @return [HTTP::Response]
     def get_item(item_id, params = {})
-      url = build_url('item', item_id)
+      url = build_url("item", item_id)
       params = params.merge(item_id: item_id)
 
       http.headers(build_headers).get(url, params: params)
@@ -97,7 +99,7 @@ module Ebay
     # @param [Hash] params
     # @return [HTTP::Response]
     def get_item_by_legacy_id(legacy_item_id, params = {})
-      url = build_url('item', 'get_item_by_legacy_id')
+      url = build_url("item", "get_item_by_legacy_id")
       params = params.merge(legacy_item_id: legacy_item_id)
 
       http.headers(build_headers).get(url, params: params)
@@ -108,7 +110,7 @@ module Ebay
     # @param [String] item_group_id
     # @return [HTTP::Response]
     def get_items_by_item_group(item_group_id)
-      url = build_url('item', 'get_items_by_item_group')
+      url = build_url("item", "get_items_by_item_group")
       params = { item_group_id: item_group_id }
 
       http.headers(build_headers).get(url, params: params)
@@ -120,50 +122,54 @@ module Ebay
     # @param [String] marketplace_id
     # @return [HTTP::Response]
     def check_compatibility(item_id, marketplace_id, compatibility_properties)
-      url = build_url('item', item_id, 'check_compatibility')
+      url = build_url("item", item_id, "check_compatibility")
       headers = build_headers
-      headers.update('X-EBAY-C-MARKETPLACE-ID' => marketplace_id, 'CONTENT-TYPE' => 'application/json')
-      body = JSON.dump('compatibilityProperties' => compatibility_properties)
+      headers.update("X-EBAY-C-MARKETPLACE-ID" => marketplace_id, "CONTENT-TYPE" => "application/json")
+      body = JSON.dump("compatibilityProperties" => compatibility_properties)
 
       http.headers(headers).post(url, body: body)
     end
 
     def add_item
-      raise 'not implemented'
+      raise "not implemented"
     end
 
     def get_shopping_cart
-      raise 'not implemented'
+      raise "not implemented"
     end
 
     def remove_item
-      raise 'not implemented'
+      raise "not implemented"
     end
 
     def update_quantity
-      raise 'not implemented'
+      raise "not implemented"
     end
 
     private
 
     def build_url(*resources, operation)
-      [endpoint, *resources, operation].join('/')
+      [endpoint, *resources, operation].join("/")
     end
 
     def build_headers
-      { 'AUTHORIZATION' => "Bearer #{access_token}",
-        'X-EBAY-C-MARKETPLACE-ID' => market_id,
-        'X-EBAY-C-ENDUSERCTX' => build_ebay_enduser_context }
+      {
+        "AUTHORIZATION" => "Bearer #{access_token}",
+        "X-EBAY-C-MARKETPLACE-ID" => market_id,
+        "X-EBAY-C-ENDUSERCTX" => build_ebay_enduser_context,
+      }
     end
 
     def build_ebay_enduser_context
-      { 'affiliateCampaignId' => campaign_id,
-        'affiliateReferenceId' => reference_id,
-        'contextualLocation' => build_contextual_location }.compact.map { |kv| kv.join('=') }.join(',')
+      {
+        "affiliateCampaignId" => campaign_id,
+        "affiliateReferenceId" => reference_id,
+        "contextualLocation" => build_contextual_location,
+      }.compact.map { |kv| kv.join("=") }.join(",")
     end
 
     def build_contextual_location
-      string = { 'country' => country, 'zip' => zip }.compact.map { |kv| kv.join('=') }.join(',')
+      string = { "country" => country, "zip" => zip }.compact.map { |kv| kv.join("=") }.join(",")
       CGI.escape(string) if string
     end
   end

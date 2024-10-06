@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-require 'ebay/config'
-require 'ebay/requestable'
+require "ebay/config"
+require "ebay/requestable"
 
 # Ruby wrapper to the eBay APIs
 module Ebay
-  # Returns a {Ebay::Finding#initialize Finding API} instance
-  def self.finding(**params)
-    Finding.new(**params)
+  class << self
+    # Returns a {Ebay::Finding#initialize Finding API} instance
+    def finding(**params)
+      Finding.new(**params)
+    end
   end
 
   # The Finding API lets you search and browse for items listed on eBay and
@@ -18,7 +20,7 @@ module Ebay
   class Finding
     include Requestable
 
-    self.endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1'
+    self.endpoint = "https://svcs.ebay.com/services/search/FindingService/v1"
 
     # @return [String]
     attr_reader :global_id
@@ -44,8 +46,8 @@ module Ebay
     # @param [String] security_appname
     # @param [String] service_version
     def initialize(global_id: nil, message_encoding: nil,
-                   response_data_format: nil,
-                   security_appname: Config.app_id, service_version: nil)
+      response_data_format: nil,
+      security_appname: Config.app_id, service_version: nil)
       @global_id = global_id
       @message_encoding = message_encoding
       @response_data_format = response_data_format
@@ -58,7 +60,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_completed_items(payload = {})
-      request('findCompletedItems', payload)
+      request("findCompletedItems", payload)
     end
 
     # Searches for items by category or keyword or both
@@ -66,7 +68,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_advanced(payload = {})
-      request('findItemsAdvanced', payload)
+      request("findItemsAdvanced", payload)
     end
 
     # Searches for items using specific eBay category ID numbers
@@ -74,7 +76,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_by_category(payload = {})
-      request('findItemsByCategory', payload)
+      request("findItemsByCategory", payload)
     end
 
     # Searches for items by a keyword query
@@ -83,8 +85,8 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_by_keywords(keywords, payload = {})
-      payload = payload.merge('keywords' => keywords)
-      request('findItemsByKeywords', payload)
+      payload = payload.merge("keywords" => keywords)
+      request("findItemsByKeywords", payload)
     end
 
     # Searches for items using specific eBay product values\
@@ -94,10 +96,12 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_by_product(product_id, product_id_type, payload = {})
-      payload = payload.merge('productId' => product_id,
-                              'productId.@type' => product_id_type)
+      payload = payload.merge(
+        "productId" => product_id,
+        "productId.@type" => product_id_type,
+      )
 
-      request('findItemsByProduct', payload)
+      request("findItemsByProduct", payload)
     end
 
     # Searches for items in the eBay store inventories
@@ -105,7 +109,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def find_items_in_ebay_stores(payload = {})
-      request('findItemsIneBayStores', payload)
+      request("findItemsIneBayStores", payload)
     end
 
     # Retrieves category and/or aspect histogram information for an eBay
@@ -114,7 +118,7 @@ module Ebay
     # @param [String] category_id
     # @return [HTTP::Response]
     def get_histograms(category_id)
-      request('getHistograms', 'categoryId' => category_id)
+      request("getHistograms", "categoryId" => category_id)
     end
 
     # Retrieves commonly used words found in eBay titles, based on the words you
@@ -123,25 +127,27 @@ module Ebay
     # @param [String] keywords
     # @return [HTTP::Response]
     def get_search_keywords_recommendation(keywords)
-      request('getSearchKeywordsRecommendation', 'keywords' => keywords)
+      request("getSearchKeywordsRecommendation", "keywords" => keywords)
     end
 
     # Returns the current version of the service
     #
     # @return [HTTP::Response]
     def get_version
-      request('getVersion')
+      request("getVersion")
     end
 
     private
 
     def request(operation, payload = {})
-      params = { 'GLOBAL-ID' => global_id,
-                 'MESSAGE-ENCODING' => message_encoding,
-                 'OPERATION-NAME' => operation,
-                 'RESPONSE-DATA-FORMAT' => response_data_format,
-                 'SECURITY-APPNAME' => security_appname,
-                 'SERVICE-VERSION' => service_version }.update(payload).compact
+      params = {
+        "GLOBAL-ID" => global_id,
+        "MESSAGE-ENCODING" => message_encoding,
+        "OPERATION-NAME" => operation,
+        "RESPONSE-DATA-FORMAT" => response_data_format,
+        "SECURITY-APPNAME" => security_appname,
+        "SERVICE-VERSION" => service_version,
+      }.update(payload).compact
 
       http.headers(headers).get(endpoint, params: params)
     end

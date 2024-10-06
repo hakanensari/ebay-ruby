@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-require 'ebay/config'
-require 'ebay/requestable'
+require "ebay/config"
+require "ebay/requestable"
 
 # Ruby wrapper to the eBay APIs
 module Ebay
-  # Returns a {Ebay::Merchandising#initialize Merchandising API} instance
-  def self.merchandising(**params)
-    Merchandising.new(**params)
+  class << self
+    # Returns a {Ebay::Merchandising#initialize Merchandising API} instance
+    def merchandising(**params)
+      Merchandising.new(**params)
+    end
   end
 
   # Retrieves information about products or item listings on eBay to help you
@@ -18,7 +20,7 @@ module Ebay
   class Merchandising
     include Requestable
 
-    self.endpoint = 'https://svcs.ebay.com/MerchandisingService'
+    self.endpoint = "https://svcs.ebay.com/MerchandisingService"
 
     # @return [String]
     attr_reader :consumer_id
@@ -39,7 +41,7 @@ module Ebay
     # @param [String] response_data_format
     # @param [String] service_version
     def initialize(consumer_id: Config.app_id, global_id: nil,
-                   response_data_format: nil, service_version: nil)
+      response_data_format: nil, service_version: nil)
       @consumer_id = consumer_id
       @global_id = global_id
       @response_data_format = response_data_format
@@ -51,7 +53,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_most_watched_items(payload = {})
-      request('getMostWatchedItems', payload)
+      request("getMostWatchedItems", payload)
     end
 
     # Retrieves recommended items from categories related to a specified
@@ -60,7 +62,7 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_related_category_items(payload = {})
-      request('getRelatedCategoryItems', payload)
+      request("getRelatedCategoryItems", payload)
     end
 
     # Retrieves items that are similar to the specified item
@@ -69,26 +71,28 @@ module Ebay
     # @param [Hash] payload
     # @return [HTTP::Response]
     def get_similar_items(item_id, payload = {})
-      payload = payload.merge('itemId' => item_id)
-      request('getSimilarItems', payload)
+      payload = payload.merge("itemId" => item_id)
+      request("getSimilarItems", payload)
     end
 
     # Returns the current service version
     #
     # @return [HTTP::Response]
     def get_version
-      request('getVersion')
+      request("getVersion")
     end
 
     private
 
     def request(operation, payload = {})
-      params = { 'CONSUMER-ID' => consumer_id,
-                 'GLOBAL-ID' => global_id,
-                 'OPERATION-NAME' => operation,
-                 'REQUEST-DATA-FORMAT' => 'JSON',
-                 'RESPONSE-DATA-FORMAT' => response_data_format,
-                 'SERVICE-VERSION' => service_version }.compact
+      params = {
+        "CONSUMER-ID" => consumer_id,
+        "GLOBAL-ID" => global_id,
+        "OPERATION-NAME" => operation,
+        "REQUEST-DATA-FORMAT" => "JSON",
+        "RESPONSE-DATA-FORMAT" => response_data_format,
+        "SERVICE-VERSION" => service_version,
+      }.compact
 
       http.headers(headers).post(endpoint, params: params, body: JSON.dump(payload))
     end
